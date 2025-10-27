@@ -1,0 +1,59 @@
+#heroes{
+    background-image: url('/pictures/BiscoffCake.jpg');
+    background-size:cover;
+    background-position: center;
+    color:white;
+    height:700px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#heroes nav{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    align-items: center;
+    
+}
+#heroes a{
+    text-decoration: none;
+    color:black;
+}
+.hero-text{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#heroes button{
+    width:150px;
+    height:55px;
+    border-radius: 10px;
+   
+
+}
+#heroes h1{
+    font-size: 100px;
+}
+#heroes p{
+    font-size: 40px;
+}
+
+/*Bestsellerbereich*/
+#bestseller h1{
+    font-size: 60px;
+}
+
+.einkauf img{
+    max-width: 300px;
+    max-height: 400px;
+    height:100%;
+    width:100%;
+}
+
+#bestseller{
+    margin-left: 50px;
+}
