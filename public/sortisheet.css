@@ -43,17 +43,50 @@
 }
 
 /*Bestsellerbereich*/
-#bestseller h1{
+a{
+    text-decoration: none;
+}
+h3, #bestseller h1{
     font-size: 60px;
 }
 
-.einkauf img{
-    max-width: 300px;
-    max-height: 400px;
-    height:100%;
-    width:100%;
+.wholebox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 40px;
 }
+
+.einkauf img{
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
 
 #bestseller{
     margin-left: 50px;
+    margin-right: 50px;
+}
+
+/*Sortiment-Bereich*/
+
+
+
+
+
+
+
+
+/*footer-Bereich*/
+footer{
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg,red,black);
+    height: 165px;
 }
