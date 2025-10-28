@@ -20,7 +20,8 @@
 }
 #heroes a{
     text-decoration: none;
-    color:black;
+    color:white;
+    font-size:20px;
 }
 .hero-text{
     display:flex;
@@ -32,8 +33,9 @@
     width:150px;
     height:55px;
     border-radius: 10px;
-   
-
+    background-color: transparent;
+    border: 2px solid white;
+    color:white;
 }
 #heroes h1{
     font-size: 100px;
