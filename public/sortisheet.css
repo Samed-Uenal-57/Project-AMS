@@ -8,6 +8,8 @@
     flex-direction: column;
     text-align: center;
 }
+
+
 #heroes nav{
     display: flex;
     flex-direction: row-reverse;
@@ -36,7 +38,12 @@
     background-color: transparent;
     border: 2px solid white;
     color:white;
+    cursor: pointer;
 }
+#heroes button:hover{
+    background-color: black;
+}
+
 #heroes h1{
     font-size: 100px;
 }

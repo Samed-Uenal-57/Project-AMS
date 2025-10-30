@@ -1,0 +1,22 @@
+#order h2, img{
+    margin-left:40px;
+}
+#order-box{
+    display: flex;
+    background-color: #fff6f5;
+    min-height: 300px;
+    flex-direction: row;
+    gap:20px;
+}
+
+img{
+    margin-top:40px;
+    max-height:200px;
+}
+
+.cake{
+    margin-top:30px;
+}
+#amount{
+    max-width:25px;
+}
