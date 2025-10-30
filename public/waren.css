@@ -18,7 +18,7 @@ nav a {
 #order h2, img{
     margin-left:40px;
 }
-#order-box{
+.order-box{
     display: flex;
     background-color: #fff6f5;
     min-height: 300px;
@@ -34,6 +34,19 @@ img{
 .cake{
     margin-top:30px;
 }
-#amount{
+.amount{
     max-width:25px;
+}
+p{
+    font-weight: bolder;
+}
+
+#description{
+    font-weight:normal; 
+}
+
+#whole-boxes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
