@@ -13,6 +13,57 @@ header {
     padding: 0 40px;
 }
 
+ul {
+    list-style: none;  
+    padding: 0;
+    margin: 0;
+
+  }
+
+li {
+    display: inline;    
+    margin-right: 15px; 
+
+  }
+
+nav a {
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+}
+
+main {
+  padding: 60px 40px;
+}
+
+p {
+  background-color: lightgray;
+  line-height: 1.5;
+  padding: 1rem;
+}
+
+.about_content, .our_team {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.about_content p , .our_team p{
+  flex: 1;
+}
+
+.about_content figure, .our_team figure{
+  flex: 1;
+}
+
+.about_content img ,.our_team img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 footer{
     color:white;
@@ -21,4 +72,19 @@ footer{
     justify-content: center;
     background: linear-gradient(180deg, rgb(214, 56, 28), rgb(37, 18, 13));
     height: 165px;
+}
+
+footer a{
+  text-decoration: none;
+  color: black;
+}
+
+
+@media (max-width: 768px) {
+  .about_content , .our_team{
+    flex-direction: column;
+  }
+  .about_content p {
+    flex: 1 1 100%;
+  }
 }

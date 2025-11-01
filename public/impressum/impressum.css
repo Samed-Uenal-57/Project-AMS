@@ -1,7 +1,13 @@
 html, body {
-  font-family: "Arial", sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   margin: 0;
   padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -13,8 +19,6 @@ header {
     padding: 0 40px;
 }
 
-
-
 ul {
     list-style: none; 
     padding: 0;
@@ -25,7 +29,17 @@ li {
     display: inline;    
     margin-right: 15px; 
   }
+  
+nav a {
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+}
 
+main {
+  padding: 60px 40px;
+  flex: 1;
+}
 
 footer{
     color:white;
@@ -34,4 +48,9 @@ footer{
     justify-content: center;
     background: linear-gradient(180deg, rgb(214, 56, 28), rgb(37, 18, 13));
     height: 165px;
+}
+
+footer a{
+  text-decoration: none;
+  color: black;
 }
