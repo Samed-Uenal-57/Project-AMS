@@ -18,19 +18,82 @@ ul {
     list-style: none;  
     padding: 0;
     margin: 0;
+
   }
 
 li {
     display: inline;    
     margin-right: 15px; 
+
   }
 
 nav a {
-  text-decoration: none;
-  color: white;
-  margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
 }
-/*Ende des Headers*/
+
+
+p {
+    color:#887c73;
+    max-width: 25%;
+
+}
+
+button {
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    font-weight: bolder;
+    transition: transform 0.1s ease;
+}
+
+button:active {
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    font-weight: bolder;
+    transform: scale(0.95);
+}
+
+
+article {
+    display: flex;
+    align-items: center;
+
+    background-color: #ffffff;
+
+    padding: 60px 100px;
+    justify-content: space-evenly;
+
+}
+
+
+
+#order {
+    border: none;
+    background-color: rgba(0,0,0,0);
+    
+ 
+}
+
+
+
+
+footer{
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgb(214, 56, 28), rgb(37, 18, 13));
+    height: 165px;
+}
+
+
+
+
+/*
 
 #first {
     display: flex;
@@ -113,7 +176,7 @@ p{
 }
 
 
-/*Produkt-Highlight Bereich*/
+
 #third{
     display: flex;
     align-items: center;
@@ -141,7 +204,7 @@ h4{
     border-radius: 10px;
 }
 
-/*Kundenrezensionsbereich*/
+/*Kundenrezensionsbereich* /
 
 h5{
     font-size: 50px;
@@ -161,7 +224,7 @@ h5{
     width:100%;
 }
 
-/*Kontaktbereich*/
+/*Kontaktbereich* /
 
 #fifth{
     display:flex;
@@ -212,7 +275,7 @@ h6{
 #container p{
     color:black;
 }
-/*Footer*/
+/*Footer* /
 
 footer{
     color:white;
@@ -222,3 +285,4 @@ footer{
     background: linear-gradient(180deg, rgb(214, 56, 28), rgb(37, 18, 13));
     height: 165px;
 }
+    */
