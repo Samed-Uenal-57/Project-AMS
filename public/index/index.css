@@ -1,8 +1,15 @@
+html, body {
+  font-family: "Inter", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(180deg, rgb(32, 32, 32), rgb(255, 42, 42));
+    background: linear-gradient(180deg, rgb(37, 18, 13) 1%, rgb(214, 56, 28));
     height: 165px;
     padding: 0 40px;
 }
@@ -31,7 +38,7 @@ nav a {
     justify-content: space-around;
     gap:100px;
     padding: 60px 100px;
-    background-color: #fff6f5;
+    background-color: #3daf20;
     margin-bottom:50px;
 }
 
@@ -42,7 +49,7 @@ h1{
     padding-left: 30px;
 }
 #first, #second {
-  background-color: #fff6f5;
+    background-color: #fff9f5;
 }
 
 #description{
@@ -63,7 +70,7 @@ h2{
     gap: 40px;
     margin-bottom: 80px;
     justify-content: space-evenly;
-    background-color: #fff6f5;
+    background-color: #fff9f5;
 }
 
 .secondicon{
@@ -193,7 +200,7 @@ h6{
 #container{
     display:flex;
     flex-direction: column;
-    background-color: #fff6f5;
+    background-color: #fff9f5;
     max-width: 400px;
     border-radius: 10px;
     align-items: center;
@@ -212,6 +219,6 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(180deg,red,black);
+    background: linear-gradient(180deg, rgb(214, 56, 28), rgb(37, 18, 13));
     height: 165px;
 }
