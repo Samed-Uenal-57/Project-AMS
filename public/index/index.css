@@ -33,7 +33,7 @@ nav a {
     margin-left: 15px;
 }
 
-
+/*
 p {
     color:#887c73;
     max-width: 25%;
@@ -91,9 +91,9 @@ footer{
 }
 
 
+*/
 
 
-/*
 
 #first {
     display: flex;
@@ -204,7 +204,7 @@ h4{
     border-radius: 10px;
 }
 
-/*Kundenrezensionsbereich* /
+/*Kundenrezensionsbereich*/
 
 h5{
     font-size: 50px;
@@ -224,7 +224,7 @@ h5{
     width:100%;
 }
 
-/*Kontaktbereich* /
+/*Kontaktbereich*/
 
 #fifth{
     display:flex;
@@ -275,7 +275,7 @@ h6{
 #container p{
     color:black;
 }
-/*Footer* /
+/*Footer*/
 
 footer{
     color:white;
@@ -285,4 +285,4 @@ footer{
     background: linear-gradient(180deg, rgb(214, 56, 28), rgb(37, 18, 13));
     height: 165px;
 }
-    */
+    
