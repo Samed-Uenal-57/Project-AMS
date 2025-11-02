@@ -85,6 +85,9 @@ h3, #bestseller h1{
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
+.einkauf p{
+    max-width:400px;
+}
 .einkauf img:hover{
     
     transform: scale(1.1);

@@ -25,27 +25,26 @@
             <section id="product">
                 <img src="../../pictures/VanilleTorte1.jpg">
                 <div id="description">
-                    <h2>Mixed Dreams</h2>
+                    <h2>Vanille-Torte</h2>
                     <p class="price">Preis: 30€</p>
                     <p class="mwst">(inkl. MwSt)</p>
                     <h3>Beschreibung:</h3>
-                    <p class="description">Lorem ipsum dolor sit amet, <br>
-                        consetetur sadipscing elitr, <br> 
-                        sed diam nonumy eirmod tempor invidunt ut labore <br> 
-                        et dolore magna 
-                        aliquyam erat, sed diam voluptua. <br>
-                        At vero eos et accusam et justo duo dolores et ea rebum.<br>
+                    <p class="description">
+                        Ein sehr einfacher aber eines der leckeren Kuchen, die es gibt. <br>
+                        Das Kuchen besteht aus 3 Vanilleböden und zwischen den Böden<br> sitzt eine süße Schokoladencreme. <br>
+                        Auf der Oberfläche gibt es noch eine sehr duftende Vanillecreme<br>
+                        über die ganze Torte.<br>
+                        Beschmückt mit Schmetterlinge. 
                     </p>
                     
-                    <label for="extras">Zusatzoptionen:</label>
+                    <label for="extra">Zusatzoptionen:</label>
                     <br>
-                    <label for="check">Extra-Beeren</label>
-                    <input type="radio" id="check"> <br>
-                    <label for="check">Keine</label>
-                    <input type="radio" id="check"><br>
+                    <input type="radio" id="extra1" name="extra" value="beeren">
+                    <label for="check">Schmetterlinge (essbar)</label><br>
+                    <input type="radio" id="extra2" name="extra" value="keine">
+                    <label for="check">Keine</label><br>
                     <label for="piece">Stückzahl:</label>
-                    
-                    <input type="number" id="piece" min="1"> <br>
+                    <input type="number" id="piece" name="piece" value="1" min="1" step="1"> <br>
                     <button class="button">In den Warenkorb</button>
                 </div>
             </section>
@@ -96,8 +95,11 @@
                             die das Kuchen noch attraktiver gemacht hat. <br>
                             "CakeCraft" benutzt einen eigenen Lieferdienst, die darauf achten, dass die Kuchen unversehrt beim Kunden ankommen. <br> 
                             Ich war überrascht, als ich meine Lieferung nach nicht einmal einem Tag erhalten habe.<br>
-                            Abschließend kann ich sagen, dass mein Kuchen super lecker war und ich würde "CakeCraft" jedem empfehlen.
+                            Das Kuchen ging an meine Schwester, die in den nächsten Tagen Ihr Geburtstag hat. <br>
+                            Ich konnte ebenso noch Schmetterlinge bestellen und es beschmücken. <br>
+                            Mit einem Blumenstrauß und diesem wundervollen Kuchen kann man ein Geburtstag perfekt machen. 
                         </p>
+                        <img  class="size" src="../../pictures/VanilleTorte1.jpg">
                     </div>
                 </div>
                 
@@ -106,23 +108,31 @@
                 <h2>Ähnliche Produkte</h2>
                 <div id="gallery">
                     <div class="box">
-                        <img src="../../pictures/Erdbeerkuchen.jpg" width="300">
-                        <h3>Erdbeerkuchen</h3>
-                        <p>35€</p>
+                        <a href="#">    
+                            <img class=""src="../../pictures/Erdbeerkuchen.jpg" width="300">
+                            <h3>Erdbeerkuchen</h3>
+                        </a>
+                        <p>Preis: 35€</p>
                     </div>
                     <div class="box">
-                        <img src="../../pictures/Schokotorte.jpg" width="370">
-                        <h3>Schokotorte</h3>
-                        <p>40€</p>
+                        <a href="#">
+                            <img src="../../pictures/Schokotorte.jpg" width="370">
+                            <h3>Schokotorte</h3>
+                        </a>
+                        <p>Preis: 40€</p>
                     </div>
                     <div class="box">
-                        <img src="../../pictures/Schokokuchen1.jpg" width="270">
-                        <h3>Schokokuchen</h3>
-                        <p>30€</p>
+                        <a href="#">
+                            <img src="../../pictures/Schokokuchen1.jpg" width="270">
+                            <h3>Schokokuchen</h3>
+                        </a>
+                        <p>Preis: 30€</p>
                     </div>
                     <div class="box">
-                        <img src="../../pictures/BiscoffCake1.jpg" width="210">
-                        <h3>Biscoffkuchen</h3>
+                        <a href="#">
+                            <img src="../../pictures/BiscoffCake1.jpg" width="210">
+                            <h3>Biscoffkuchen</h3>
+                        </a>
                         <p>Preis: 45€</p>
                     </div>
                     
