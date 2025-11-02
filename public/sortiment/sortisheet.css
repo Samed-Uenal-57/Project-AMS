@@ -7,7 +7,7 @@ html, body {
 
 
 #heroes{
-    background-image: url('/pictures/BiscoffKuchen1.jpg');
+    background-image: url('../../pictures/BiscoffKuchen1.jpg');
     background-size:cover;
     background-position: center;
     color:white;
