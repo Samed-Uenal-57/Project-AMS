@@ -4,14 +4,7 @@ html, body {
   padding: 0;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(180deg, rgb(37, 18, 13) 1%, rgb(214, 56, 28));
-    height: 165px;
-    padding: 0 40px;
-}
+
 
 #heroes{
     background-image: url('/pictures/BiscoffCake.jpg');
