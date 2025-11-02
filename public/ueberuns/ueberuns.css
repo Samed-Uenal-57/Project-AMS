@@ -8,6 +8,7 @@ main {
 
 p {
   background-color: lightgray;
+  font-size: 2rem;
   line-height: 1.5;
   padding: 1rem;
 }
@@ -22,7 +23,7 @@ p {
 }
 
 .about_content p , .our_team p{
-  flex: 1;
+  flex: 2;
 }
 
 .about_content figure, .our_team figure{

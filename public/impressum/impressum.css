@@ -1,3 +1,14 @@
+#impressum {
+    color: black;
+    padding: 0px;
+}
+
+#external_link {
+text-decoration: none;
+  color:black;
+  margin-left: 15px;
+}
+
 main {
     padding: 60px 80px;
 }
