@@ -1,5 +1,6 @@
 h2{
   font-size:40px;
+  margin: 0px;
 }
 
 main {
@@ -19,7 +20,7 @@ p {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 1rem;
+
 }
 
 .about_content p , .our_team p{
