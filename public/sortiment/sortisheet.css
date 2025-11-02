@@ -7,7 +7,7 @@ html, body {
 
 
 #heroes{
-    background-image: url('/pictures/BiscoffCake.jpg');
+    background-image: url('/pictures/BiscoffKuchen1.jpg');
     background-size:cover;
     background-position: center;
     color:white;
@@ -47,9 +47,11 @@ html, body {
     border: 2px solid white;
     color:white;
     cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease; 
 }
 #heroes button:hover{
-    background-color: black;
+    background-color: #B91C1C;
+    color: #FFDCDC;
 }
 
 #heroes h1{
@@ -62,6 +64,7 @@ html, body {
 /*Bestsellerbereich*/
 a{
     text-decoration: none;
+    color:black;
 }
 h3, #bestseller h1{
     font-size: 60px;
@@ -76,12 +79,17 @@ h3, #bestseller h1{
 }
 
 .einkauf img{
-    max-width: 400px;
-    max-height: 400px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
     border-radius: 10px;
+    transition: transform 0.3s ease;
 }
-
+.einkauf img:hover{
+    
+    transform: scale(1.1);
+    
+}
 
 
 #bestseller{
@@ -106,4 +114,10 @@ footer{
     justify-content: center;
     background: linear-gradient(180deg, rgb(214, 56, 28), rgb(37, 18, 13));
     height: 165px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    margin-left: 15px;
 }
