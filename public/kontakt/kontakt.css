@@ -3,26 +3,31 @@
     display: flex;
     margin-top: 20px;
     margin: 60px;
-    padding: 20px;
+    
 }
-#adress{
+#contact{
     gap: 50px;
 }
 #contact h1{
     font-size: 40px;
 }
 #contact h3{
-    color:#c6c6c6;
+    color:#4c4c4c;
 }
 .contact-text{
     max-width: 600px;
 }
 #info-box{
     display:flex;
-    gap: 25px;
+    gap: 75px;
 }
 #img-container{
-    width: 500px;
+    width: 600px;
+    height: 450px;
+    object-fit: cover;
+}
+#img-container2{
+    width: 900px;
     height: auto;
     object-fit: cover;
 }
