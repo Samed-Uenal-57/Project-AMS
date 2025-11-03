@@ -48,9 +48,16 @@ a {
 img{
     margin-top:40px;
     max-height:200px;
+    max-width:200px; 
+    overflow: hidden;
+    }
+
+button {
+    margin: 15px;
 }
 
-p{
+
+.form p{
     font-size: 35px;
     font-weight: bolder;
 
@@ -72,6 +79,52 @@ p{
     height: 30px;
 }
 
+#Warenkorb {
+    background-color: #fff6f5;
+    margin-top: 50px;
+    padding: 25px;
+
+}
+
+#check {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    max-width: 35%;
+    min-width: 100px;
+}
+
+#description {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#summe {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+
+}
+
+#kaufen {
+    margin-left: 15%;
+    min-width: 300px;
+    background-color:rgb(214, 56, 28);
+
+}
+
+#kaufen:hover {
+    min-width: 300px;
+    background-color: red;
+
+}
+
+
+
+
 
 
 
@@ -85,6 +138,7 @@ p{
     background-color: #fff6f5;
     padding: 20px;
     padding-left: 70px;
+    padding-bottom: 50px;
     position: relative;
 
     font-size: 115%;
@@ -154,8 +208,26 @@ p{
 }
 
 
+.element {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    
+    padding-bottom: 50px;
+}
 
+.inner-element {
+    display: table-column;
+    
+    padding: 5px;
+    align-items: center;
+}
 
+.line {
+    width: 80%;
+    border-bottom: black solid 2px;
+    margin-bottom: 50px;
+}
 
 
 
@@ -172,5 +244,11 @@ p{
       opacity: 0;
     }
 }
+
+
+
+
+
+clip-path: inset(10px calc(100% - 170px) calc(100% - 110px) 70px);
 
   */

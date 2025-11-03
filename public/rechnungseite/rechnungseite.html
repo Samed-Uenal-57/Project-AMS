@@ -93,27 +93,36 @@
             -->
 
       <div id="Warenkorb">
-        <div>
-          <img src="../../pictures/Erdbeerkuchen.jpg" width="100">
-          <p> Schokobrunnen 45 €</p>
+        <div class="element">
+          <img src="../../pictures/Erdbeerkuchen.jpg">
+          <div class="inner-element">
+            <h2> Schokobrunnen</h2>
+            <p> 45 € </p>
+          </div>
         </div>
-          <div>
-          <img src="../../pictures/Schokokuchen.jpg" width="100">
-          <p> Mixed Dreams 62,50 €</p>
+        <div class="element">
+          <img src="../../pictures/Schokokuchen.jpg">
+          <div class="inner-element">
+            <h2>  Mixed Dreams</h2>
+            <p> 62,50 € </p>
+          </div>
         </div>
 
-        <input type="button" value="Rebattcode" onclick="alert('Rebattcode action')">
-        <input type="button" value="Anwenden" onclick="alert('Anwenden action')">
+        <div class="line"></div>
 
-        <div>
-          <div>
+        
+        <button class="button" onclick="alert('Rebattcode action')">Rebattcode</button>
+        <button class="button" onclick="alert('Anwenden action')">Anwenden</button>
+        
+        <div id="check">
+          <div id="description">
             Zwischensumme - 2 Artikel 
             <br>
             Versand 
             <br>
             Gesamt 
           </div>
-          <div>
+          <div id="summe">
              107,50 € 
             <br>
              2,50 €
@@ -122,8 +131,8 @@
           </div>
         </div>
 
-        <input type="button" value="Jetzt Kaufen" onclick="alert('Jetzt Kaufen action')">
-
+        <button class="button" id="kaufen" onclick="alert('Jetzt Kaufen action')">Jetzt Kaufen</button>
+        
       </div>
 
 
