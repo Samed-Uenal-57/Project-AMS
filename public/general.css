@@ -6,7 +6,7 @@ html, body {
 }
 
 /*Head-Section*/
-h1{
+header h1{
     color:rgb(249, 249, 249);
     padding: 10px;
     padding-left: 30px;

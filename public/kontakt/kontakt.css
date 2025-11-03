@@ -1,4 +1,37 @@
+/*Kontaktiere Uns*/
+#contact,#adress{
+    display: flex;
+    margin-top: 20px;
+    margin: 60px;
+    padding: 20px;
+}
+#adress{
+    gap: 50px;
+}
+#contact h1{
+    font-size: 40px;
+}
+#contact h3{
+    color:#c6c6c6;
+}
+.contact-text{
+    max-width: 600px;
+}
+#info-box{
+    display:flex;
+    gap: 25px;
+}
+#img-container{
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+}
+
+/*Formular*/
 #contact-form{
+    display: flex;
+    flex-direction: column;
+    
     max-width: 800px;
     margin: 60px;
     padding: 20px;
