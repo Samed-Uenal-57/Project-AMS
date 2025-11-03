@@ -12,63 +12,98 @@
         <header>
             <h1>CakeCraft</h1>
             <nav>
-                <a href="../index/index.html">Startseite</a>
-                <a href="../impressum/">Impressum</a>
-                <a href="../ueberuns/ueberuns.html">Über Uns</a>
-                <a href="../kontakt/">Kontakt</a>
+                <ul>
+                    <li><a href="../index/index.html">Startseite</a></li>
+                    <li><a href="../sortiment/sortiment.html"> Sortiment</a></li>
+                    <li><a href="../warenkorb/warenkorb.html"><button id="order">Warenkorb</button></a></li>
+                </ul>
             </nav>
             
+            
         </header>
-        <section id="order">
-            <h2>Ihr Warenkorb:</h2>
-            <div id="whole-boxes">
-                <div class="order-box">
-                    <img src="../../pictures/ErdbeereSchokoKuchen1.jpg" width="200">
-                    <div class="cake">
-                        <p>Name: Mixed Dreams</p>
-                        <p>Kosten: 40€</p>
-                        <label for="amount">Menge: </label>
-                        <input type="number" class="amount" min="1">
-                        <p>Zusatzoptionen: Extra-Beeren(2,50€)</p>
-                        
-                        <p>Beschreibung:</p>
-                        <p id="description">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br> 
-                            sed diam nonumy eirmod tempor invidunt ut labore <br> 
-                            et dolore magna 
-                        </p>
+        <main>
+            <section id="order">
+                <h2>Ihr Warenkorb:</h2>
+                <div id="whole-boxes">
+                    <div class="order-box">
+                        <img src="../../pictures/ErdbeereSchokoKuchen1.jpg" width="200">
+                        <div class="cake">
+                            <p>Name: Mixed Dreams</p>
+                            <p>Kosten: 40€</p>
+                            <label for="amount">Menge: </label>
+                            <input type="number" class="amount" min="1">
+                            <p>Zusatzoptionen: Extra-Beeren(2,50€)</p>
+
+                            <p>Beschreibung:</p>
+                            <p id="description">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br> 
+                                sed diam nonumy eirmod tempor invidunt ut labore <br> 
+                                et dolore magna 
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="order-box">
-                    <img src="../../pictures/BiscoffCake1.jpg" width="200">
-                    <div class="cake">
-                        <p>Name: Biscoff Paradise</p>
-                        <p>Kosten: 50€</p>
-                        <label for="amount">Menge: </label>
-                        <input type="number" class="amount" min="1">
-                        <p>Zusatzoptionen: Extra Biscoff-Kekse(4,00€)</p>
-                        
-                        <p>Beschreibung:</p>
-                        <p id="description">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br> 
-                            sed diam nonumy eirmod tempor invidunt ut labore <br> 
-                            et dolore magna 
-                        </p>
+                    <div class="order-box">
+                        <img src="../../pictures/BiscoffCake1.jpg" width="200">
+                        <div class="cake">
+                            <p>Name: Biscoff Paradise</p>
+                            <p>Kosten: 50€</p>
+                            <label for="amount">Menge: </label>
+                            <input type="number" class="amount" min="1">
+                            <p>Zusatzoptionen: Extra Biscoff-Kekse(4,00€)</p>
+
+                            <p>Beschreibung:</p>
+                            <p id="description">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br> 
+                                sed diam nonumy eirmod tempor invidunt ut labore <br> 
+                                et dolore magna 
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="order-box1">
-                    <h2>Gesamtkosten:</h2>
-                    <div id="cost">
-                        <p>1x Mixed Dreams</p>
-                        <p>36,45€</p>
-                    </div>
-                    
-                </div>
 
 
+
+                    <div class="order-box1">
+                        <div id="Gesamtkosten">
+                            <h2>Gesamtkosten:</h2>
+                            <ul class="check">
+                                <li>1x Schokobrunnen</li>
+                                <li>1x Mixed Dreams</li>
+                            </ul>
+                            <p>Insgesamt</p>
+                        </div>
+                        <div id="Zwischensumme">
+                            <h4>Zwischensumme</h4>
+                            <ul class="check">
+                                <li>36,45 €</li>
+                                <li>50,25 €</a></li>
+                            </ul>
+                            <p>86,70 €</p>
+                        </div>
+                        <div id="Gesamtsumme">
+                            <h4>Gesamtsumme mit MwSt</h4>
+                            <ul class="check">
+                                <li>45 €</li>
+                                <li>62,50 €</li>
+                            </ul>
+                            <p>107,50 €</p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </section>
+            <a href="../rechnungseite/rechnungseite.html"><button id="zurkasse">Weiter zur Rechnung</button></a>
+        </main>
+        <footer>
+            <div>
+                <a href="../ueberuns/ueberuns.html">Über Uns</a>
+                &nbsp;
+                <a href="../impressum/impressum.html">Impressum</a>
+                &nbsp;
+                <a href="../kontakt/kontakt.html">Kontakt</a>
             </div>
-        </section>
-        <a href="../rechnungseite/rechnungseite.html"><button>Weiter zur Rechnung</button></a>
+        </footer>
     </body>
 
 

@@ -1,8 +1,25 @@
+a {
+    text-decoration: none;
+    font-weight: 350;
+    
+}
 
+img{
+    margin-top:40px;
+    max-height:200px;
+}
+
+p{
+    font-weight: bolder;
+}
 
 #order h2, img{
     margin-left:40px;
 }
+
+
+
+
 .order-box{
     display: flex;
     background-color: #fff6f5;
@@ -11,9 +28,19 @@
     gap:20px;
 }
 
-img{
-    margin-top:40px;
-    max-height:200px;
+.order-box1{
+    display: flex;
+    background-color: #fff6f5;
+    min-height: 300px;
+    flex-direction: row;
+    gap:20px;
+    padding: 50px;
+}
+
+.check {
+    display: flex;
+    flex-direction: column;
+
 }
 
 .cake{
@@ -22,9 +49,9 @@ img{
 .amount{
     max-width:25px;
 }
-p{
-    font-weight: bolder;
-}
+
+
+
 
 #description{
     font-weight:normal; 
@@ -34,5 +61,23 @@ p{
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+#Gesamtkosten {
+    flex: 1;
+    border-right: 2px solid #1f1f1f;
+}
+
+#zurkasse {
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    min-width: 200px;
+    margin: 50px;
+    margin-left: auto;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
