@@ -30,18 +30,16 @@ p{
 
 .order-box1{
     display: flex;
+    flex-direction: row;
     background-color: #fff6f5;
     min-height: 300px;
     flex-direction: row;
-    gap:20px;
-    padding: 50px;
+    gap:50px;
+    padding: 40px;
+    border-radius: 10px;
 }
 
-.check {
-    display: flex;
-    flex-direction: column;
 
-}
 
 .cake{
     margin-top:30px;
@@ -50,7 +48,10 @@ p{
     max-width:25px;
 }
 
-
+.delete-btn{
+    width: auto;
+    height: auto;
+}
 
 
 #description{
@@ -62,10 +63,34 @@ p{
     flex-direction: column;
     gap: 20px;
 }
+.check {
+    display: flex;
+    flex-direction: column;
 
-#Gesamtkosten {
+}
+#gesamtkosten {
     flex: 1;
     border-right: 2px solid #1f1f1f;
+}
+
+#summen{
+    padding-left: 20px;
+}
+
+#summen h4{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#summen li{
+    font-weight: normal;
+    margin-bottom: 8px;
+    font-size:16px;
+}
+.mwst-hinweis{
+    font-size: 13px;
+    color: #555;
+    margin-top: 10px;
 }
 
 #zurkasse {

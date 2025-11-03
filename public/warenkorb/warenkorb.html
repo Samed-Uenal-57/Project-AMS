@@ -27,36 +27,42 @@
                 <h2>Ihr Warenkorb:</h2>
                 <div id="whole-boxes">
                     <div class="order-box">
-                        <img src="../../pictures/ErdbeereSchokoKuchen1.jpg" width="200">
+                        <a href="../artikel/artikel.html">
+                            <img src="../../pictures/ErdbeereSchokoKuchen1.jpg" width="200">
+                        </a>
                         <div class="cake">
-                            <p>Name: Mixed Dreams</p>
-                            <p>Kosten: 40€</p>
+                            <p>Name: Erdbeer-Schokokuchen</p>
+                            <p>Kosten: 35€</p>
                             <label for="amount">Menge: </label>
                             <input type="number" class="amount" min="1">
+                            <button class="delete-btn"> Aus Warenkorb entfernen</button>
                             <p>Zusatzoptionen: Extra-Beeren(2,50€)</p>
+                            
 
                             <p>Beschreibung:</p>
                             <p id="description">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br> 
-                                sed diam nonumy eirmod tempor invidunt ut labore <br> 
-                                et dolore magna 
+                                Leckerer Erdbeer-Schokokuchen mit <br> Erdbeer- und Blaubeerstücken
                             </p>
                         </div>
                     </div>
                     <div class="order-box">
-                        <img src="../../pictures/BiscoffCake1.jpg" width="200">
+                        <a href="../artikel/artikel.html">
+                            <img src="../../pictures/BiscoffCake1.jpg" width="200">
+                        </a>
                         <div class="cake">
-                            <p>Name: Biscoff Paradise</p>
-                            <p>Kosten: 50€</p>
+                            <p>Name: Biscoff-Kuchen</p>
+                            <p>Kosten: 30€</p>
                             <label for="amount">Menge: </label>
                             <input type="number" class="amount" min="1">
+                            <button class="delete-btn">Aus Warenkorb entfernen</button>
                             <p>Zusatzoptionen: Extra Biscoff-Kekse(4,00€)</p>
 
                             <p>Beschreibung:</p>
                             <p id="description">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br> 
-                                sed diam nonumy eirmod tempor invidunt ut labore <br> 
-                                et dolore magna 
+                                Ein cremiger Karamelltraum mit Lotus Biscoff-Keksen <br>
+                                Hier findest du einen knusprigen Keksboden, <br> 
+                                Karamellcreme im Übermaß und Toppings aus feinen Keksstreuseln <br>
+                                und ein paar Biscoff-Keksen 
                             </p>
                         </div>
                     </div>
@@ -64,31 +70,23 @@
 
 
                     <div class="order-box1">
-                        <div id="Gesamtkosten">
+                        <div id="gesamtkosten">
                             <h2>Gesamtkosten:</h2>
                             <ul class="check">
-                                <li>1x Schokobrunnen</li>
-                                <li>1x Mixed Dreams</li>
+                                <li>1x Erdbeer-Schokokuchen</li>
+                                <li>1x Biscoff-Kuchen</li>
                             </ul>
-                            <p>Insgesamt</p>
                         </div>
-                        <div id="Zwischensumme">
-                            <h4>Zwischensumme</h4>
+                        <div id="summen">
+                            <h4>Preisübersicht:</h4>
                             <ul class="check">
-                                <li>36,45 €</li>
-                                <li>50,25 €</a></li>
+                                <li>Zwischensumme (netto): <strong>57,92 €</strong></li>
+                                <li>+ 19% MwSt: <strong> 13,58 € </strong></li>
+                                <li><hr></li>
+                                <li><strong>Gesamtsume: 71,50 €</strong></li>
                             </ul>
-                            <p>86,70 €</p>
+                            <p class="mwst-hinweis">Alle Preise inkl. gesetzlicher MwSt.</p>
                         </div>
-                        <div id="Gesamtsumme">
-                            <h4>Gesamtsumme mit MwSt</h4>
-                            <ul class="check">
-                                <li>45 €</li>
-                                <li>62,50 €</li>
-                            </ul>
-                            <p>107,50 €</p>
-                        </div>
-
                     </div>
 
 
