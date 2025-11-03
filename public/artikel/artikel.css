@@ -1,11 +1,3 @@
-body{
-    
-    font-family: "Inter", sans-serif;
-    margin: 0;
-    padding: 0;
-    color:#222;
-}
-
 /*Produkt-Sektion*/
 
 #product{
@@ -17,6 +9,7 @@ body{
     flex-wrap: wrap;
     background-color: #fff9f5;
 }
+
 #product img{
     max-width: 500px;
     width: 100%;
@@ -24,6 +17,7 @@ body{
     border-radius: 12px;
     object-fit: cover;
 }
+
 #product .info{
     display: flex;
     flex-direction: column;
@@ -46,6 +40,7 @@ body{
     font-size: 14px;
     margin-bottom: 20px;
 }
+
 label{
     font-weight: 500;
     margin-top: 10px;
@@ -91,16 +86,19 @@ input[type="number"]{
     margin-bottom: 20px;
     padding-top:20px;
 }
+
 #whole-img-review{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 .author{
     display: flex;
     flex-direction: column;
 
 }
+
 .size{
     width: 400px;
     height: 400px;
@@ -109,6 +107,7 @@ input[type="number"]{
 }
 
 /*Rezensionsbereich*/
+
 #review{
    background-color: #fff9f5;
     
@@ -129,6 +128,7 @@ input[type="number"]{
     padding:20px;
     min-height: 200px;
 }
+
 #review-img{
     max-width: 300px;
     width: 100%;
@@ -137,9 +137,11 @@ input[type="number"]{
 }
 
 /*Ähnliche Produkte*/
+
 #relatedproducts{
     background-color: #fff9f5;
 }
+
 #relatedproducts h2{
     padding-top: 20px;
     margin-left: 20px;

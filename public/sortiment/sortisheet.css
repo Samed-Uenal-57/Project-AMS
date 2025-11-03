@@ -4,8 +4,6 @@ html, body {
   padding: 0;
 }
 
-
-
 #heroes{
     background-image: url('../../pictures/BiscoffKuchen1.jpg');
     background-size:cover;
@@ -17,7 +15,6 @@ html, body {
     text-align: center;
 }
 
-
 #heroes nav{
     display: flex;
     flex-direction: row-reverse;
@@ -28,17 +25,20 @@ html, body {
     align-items: center;
     
 }
+
 #heroes a{
     text-decoration: none;
     color:white;
     font-size:20px;
 }
+
 .hero-text{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 #heroes button{
     width:150px;
     height:55px;
@@ -49,6 +49,7 @@ html, body {
     cursor: pointer;
     transition: background-color 0.5s ease; 
 }
+
 #heroes button:hover{
     background-color: #B91C1C;
     
@@ -57,15 +58,18 @@ html, body {
 #heroes h1{
     font-size: 100px;
 }
+
 #heroes p{
     font-size: 40px;
 }
 
 /*Bestsellerbereich*/
+
 a{
     text-decoration: none;
     color:black;
 }
+
 h3, #bestseller h1{
     font-size: 60px;
 }
@@ -85,31 +89,22 @@ h3, #bestseller h1{
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
+
 .einkauf p{
     max-width:400px;
 }
-.einkauf img:hover{
-    
-    transform: scale(1.1);
-    
-}
 
+.einkauf img:hover{
+    transform: scale(1.1);
+}
 
 #bestseller{
     margin-left: 50px;
     margin-right: 50px;
 }
 
-/*Sortiment-Bereich*/
-
-
-
-
-
-
-
-
 /*footer-Bereich*/
+
 footer{
     color:white;
     display: flex;

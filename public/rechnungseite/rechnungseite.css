@@ -1,7 +1,4 @@
-
-
 .title {
-
     color: black;
     font-weight: 600;
     letter-spacing: -1px;
@@ -11,60 +8,31 @@
     padding-left: 30px;
     margin-bottom: 5px;
     padding-left: 15px;
-
 }
-
-/*
-.title::before,.title::after {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    left: 0px;
-    background-color: rgb(214, 56, 28);
-}
-  
-.title::before {
-    width: 18px;
-    height: 18px;
-    background-color: rgb(214, 56, 28);
-}
-  
-.title::after {
-    width: 18px;
-    height: 18px;
-    animation: pulse 1s linear infinite;
-}
-
-*/
 
 a {
     text-decoration: none;
     font-weight: 350;
-    
 }
 
-img{
-    margin-top:40px;
-    max-height:200px;
-    max-width:200px; 
+img {
+    margin-top: 40px;
+    max-height: 200px;
+    max-width: 200px;
     overflow: hidden;
-    }
+}
 
 button {
     margin: 15px;
 }
 
-
-.form p{
+.form p {
     font-size: 35px;
     font-weight: bolder;
-
 }
 
-#order h2, img{
-    margin-left:40px;
+#order h2, img {
+    margin-left: 40px;
 }
 
 #pp {
@@ -83,7 +51,12 @@ button {
     background-color: #fff6f5;
     margin-top: 50px;
     padding: 25px;
+}
 
+.size{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
 }
 
 #check {
@@ -105,45 +78,30 @@ button {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
-
 }
 
 #kaufen {
-    margin-left: 15%;
+    margin-left: 20px;
     min-width: 300px;
-    background-color:rgb(214, 56, 28);
-
+    background-color: rgb(214, 56, 28);
 }
 
 #kaufen:hover {
     min-width: 300px;
     background-color: red;
-
 }
-
-
-
-
-
-
-
-
 
 .form {
     display: flex;
     flex-direction: column;
     gap: 7px;
-
     background-color: #fff6f5;
     padding: 20px;
     padding-left: 70px;
     padding-bottom: 50px;
     position: relative;
-
     font-size: 115%;
 }
-
 
 .flex {
     display: flex;
@@ -151,8 +109,7 @@ button {
     gap: 25px;
     width: auto;
     max-width: 550px;
-
-}  
+}
 
 .flex label {
     display: flex;
@@ -160,28 +117,24 @@ button {
     gap: 25px;
     width: auto;
     max-width: 550px;
-
-} 
+}
 
 .form label {
     position: relative;
-
     max-width: 530px;
     width: 100%;
-
 }
-  
+
 .form label .input {
     width: 100%;
     padding: 10px 10px 20px 10px;
     outline: 0;
     border: none;
     border-radius: 10px;
-
     max-width: 550px;
 }
-  
-.form label .input + span {
+
+.form label .input+span {
     position: absolute;
     left: 10px;
     top: 15px;
@@ -189,37 +142,34 @@ button {
     font-size: 0.9em;
     cursor: text;
     transition: 0.3s ease;
-    
 }
-  
-.form label .input:placeholder-shown + span {
+
+.form label .input:placeholder-shown+span {
     top: 15px;
     font-size: 0.9em;
 }
-  
-.form label .input:focus + span,.form label .input:valid + span {
+
+.form label .input:focus+span,
+.form label .input:valid+span {
     top: 30px;
     font-size: 0.7em;
     font-weight: 600;
 }
-  
-.form label .input:valid + span {
+
+.form label .input:valid+span {
     color: green;
 }
-
 
 .element {
     display: flex;
     padding: 5px;
     align-items: center;
-    
     padding-bottom: 50px;
 }
 
 .inner-element {
     display: table-column;
-    
-    padding: 5px;
+    padding: 20px;
     align-items: center;
 }
 
@@ -228,27 +178,3 @@ button {
     border-bottom: black solid 2px;
     margin-bottom: 50px;
 }
-
-
-
-/*
-
-@keyframes pulse {
-    from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-  
-    to {
-      transform: scale(1.8);
-      opacity: 0;
-    }
-}
-
-
-
-
-
-clip-path: inset(10px calc(100% - 170px) calc(100% - 110px) 70px);
-
-  */

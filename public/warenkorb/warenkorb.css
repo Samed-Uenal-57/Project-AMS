@@ -1,7 +1,6 @@
 a {
     text-decoration: none;
     font-weight: 350;
-    
 }
 
 img{
@@ -16,9 +15,6 @@ p{
 #order h2, img{
     margin-left:40px;
 }
-
-
-
 
 .order-box{
     display: flex;
@@ -39,11 +35,10 @@ p{
     border-radius: 10px;
 }
 
-
-
 .cake{
     margin-top:30px;
 }
+
 .amount{
     max-width:25px;
 }
@@ -52,7 +47,6 @@ p{
     width: auto;
     height: auto;
 }
-
 
 #description{
     font-weight:normal; 
@@ -63,11 +57,13 @@ p{
     flex-direction: column;
     gap: 20px;
 }
+
 .check {
     display: flex;
     flex-direction: column;
 
 }
+
 #gesamtkosten {
     flex: 1;
     border-right: 2px solid #1f1f1f;
@@ -87,6 +83,7 @@ p{
     margin-bottom: 8px;
     font-size:16px;
 }
+
 .mwst-hinweis{
     font-size: 13px;
     color: #555;
@@ -105,4 +102,3 @@ p{
     border-radius: 10px;
     font-size: 16px;
 }
-
