@@ -8,7 +8,7 @@ html, body {
 
 /*Head-Section*/
 header h1{
-    color:rgb(249, 249, 249);
+
     padding: 10px;
     padding-left: 30px;
 }
@@ -21,6 +21,22 @@ header {
     padding: 0 40px;
     
 }
+
+#Cake {
+    font-size: 60px;
+    font-weight: bolder;
+    color:rgb(214, 56, 28);
+}
+#Craft {
+    font-size: 60px;
+    font-weight: bolder;
+    color: black;
+}
+
+a {
+    font-weight: bolder;
+}
+
 #hero-text{
     max-width:380px;
 }

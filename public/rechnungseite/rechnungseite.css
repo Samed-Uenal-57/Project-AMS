@@ -1,0 +1,176 @@
+
+
+.title {
+
+    color: black;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+
+}
+
+/*
+.title::before,.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: rgb(214, 56, 28);
+}
+  
+.title::before {
+    width: 18px;
+    height: 18px;
+    background-color: rgb(214, 56, 28);
+}
+  
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+*/
+
+a {
+    text-decoration: none;
+    font-weight: 350;
+    
+}
+
+img{
+    margin-top:40px;
+    max-height:200px;
+}
+
+p{
+    font-size: 35px;
+    font-weight: bolder;
+
+}
+
+#order h2, img{
+    margin-left:40px;
+}
+
+#pp {
+    position: absolute;
+    margin-left: 513px;
+    margin-top: -37px;
+    border: 2px solid black;
+    border-radius: 1000000px;
+    background-color: white;
+    font-size: 120%;
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    background-color: #fff6f5;
+    padding: 20px;
+    padding-left: 70px;
+    position: relative;
+
+    font-size: 115%;
+}
+
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 25px;
+    width: auto;
+    max-width: 550px;
+
+}  
+
+.flex label {
+    display: flex;
+    width: 100%;
+    gap: 25px;
+    width: auto;
+    max-width: 550px;
+
+} 
+
+.form label {
+    position: relative;
+
+    max-width: 530px;
+    width: 100%;
+
+}
+  
+.form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: none;
+    border-radius: 10px;
+
+    max-width: 550px;
+}
+  
+.form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+    
+}
+  
+.form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+}
+  
+.form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+  
+.form label .input:valid + span {
+    color: green;
+}
+
+
+
+
+
+
+
+/*
+
+@keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+}
+
+  */

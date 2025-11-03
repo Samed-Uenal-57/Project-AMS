@@ -12,7 +12,8 @@
   <body>
     <header> 
             
-      <h1>CakeCraft</h1>
+      <h1 id="Cake"><a href="../index/index.html">Cake<span id="Craft">Craft</span></a></h1>
+
 
         <nav>
           <ul>
@@ -31,34 +32,61 @@
     <main>
             
 
-      <div id="Lieferung">
-        <label class="title">Lieferung</label>
-        <form class="form">
-          <input class="Land" placeholder="Land/Region" type="text">
-          <input class="Vorname" placeholder="Vorname" type="text">                  
-          <input class="Nachname" placeholder="Nachname" type="text">
-          <input class="Adresse" placeholder="Adresse" type="text">
-          <input class="Postleitzahl" placeholder="Postleitzahl" type="text">
-          <input class="Stadt" placeholder="Stadt" type="text">
-        </form>
-        <label class="title">Zahlung</label>
-        <form class="form">
-          <input class="Kreditkarte" placeholder="Kreditkarte" type="text">                  
-          <input class="Bankuberweisung" placeholder="Banküberweisung" type="text">
-          <input class="PayPal" placeholder="PayPal" type="text">
-          <input type="button" value="+" onclick="alert('paypal action')">
-        </form>
-      </div>
+      <form class="form">
+        <p class="title">Lieferung</p>
+        <label>
+          <input required="" class="input" placeholder="" type="text">
+          <span>Land/Region</span>
+        </label>
+        <div class="flex">
+          <label>
+            <input required="" class="input" placeholder="" type="text">    
+            <span>Vorname</span>
+          </label>
+          <label>
+            <input required="" class="input" placeholder="" type="text">
+            <span>Nachname</span>
+          </label>
+        </div>
+        <label>
+          <input required="" class="input" placeholder="" type="text">
+          <span>Adresse</span>
+        </label>
+        <div class="flex">
+          <label>
+            <input required="" class="input" placeholder="" type="text">
+            <span>Postleitzahl</span>
+          </label>
+          <label>
+            <input required="" class="input" placeholder="" type="text">
+            <span>Stadt</span>
+          </label>
+        </div>
+        <p class="title">Zahlung</p>
+        <label>
+          <input required="" class="input" placeholder="" type="text">    
+          <span>Kreditkarte</span>   
+        </label>
+        <label>          
+          <input required="" class="input" placeholder="" type="text">
+          <span>Banküberweisung</span>
+        </label>  
+        <label>
+          <input required="" class="input" placeholder="" type="text">
+          <span>PayPal</span>
+          <button class="button" id="pp" onclick="alert('paypal action')">+</button>
+        </label>
+      </form>
 
             <!--
             <div id="Warenkorb">
               <form id="form-products">
-                <h3>Товары</h3>
+                <h3>goods</h3>
                 <div id="fields"></div>
 
                 <div style="margin-top:8px;">
-                  <button type="button" id="add">+ Добавить</button>
-                  <button type="submit">Отправить</button>
+                  <button type="button" id="add">+ add</button>
+                  <button type="submit">submit</button>
                 </div>
               </form>
             </div>
