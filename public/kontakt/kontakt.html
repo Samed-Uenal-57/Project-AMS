@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="kontakt.css">
         <link rel="stylesheet" type="text/css" href="../general.css">
-        <title>Kontakt uns</title>
+        <title>Kontakt</title>
     </head>
 
     <body>
@@ -68,100 +68,36 @@
                 </div>
                 <img src="../../pictures/Erdbeerkuchen.jpg" width="300">
             </div>
+            <section id="contact-form">
+                <h2>Kontaktiere Uns</h2>
             
-            <h2>Kontaktiere Uns</h2>
-            <div>
                 <form class="form">
-                    <label for="Vorname">Vorname</label>
-                    <input name="Vorname" placeholder="" type="text">   
-                    <label for="Vorname">Nachname</label>      
-                    <input name="Vorname" placeholder="" type="text">
-                    <label for="Email-Adresse">Email-Adresse</label>      
-                    <input name="Email-Adresse" placeholder="email@musterdomain.com" type="email">
-                    <label for="Nachricht">Email-Adresse</label>     
-                    <input name="Nachricht" placeholder="Enter your question or message" type="text">
-                </form>
-                <input type="button" value="Verschicken" onclick="alert('paypal action')">
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-            <!--
-            <section id="article">
-                <img src="../../pictures/ErdbeereSchokoKuchen1.jpg"> 
-                <div id="description">
-                    <h2>Mixed Dreams</h2>
-                    <p class="price">Preis: 30€</p>
-                    <p class="mwst">(inkl. MwSt)</p>
-                    <h3>Beschreibung:</h3>
-                    <p class="description">Lorem ipsum dolor sit amet, <br>
-                        consetetur sadipscing elitr, <br> 
-                        sed diam nonumy eirmod tempor invidunt ut labore <br> 
-                        et dolore magna 
-                        aliquyam erat, sed diam voluptua. <br>
-                        At vero eos et accusam et justo duo dolores et ea rebum.<br>
-                    </p>
-                    <label for="extras">Zusatzoptionen:</label>
-                    <label for="check">Extra-Beeren</label>
-                    <input type="radio" id="check"> <br>
-                    <label for="piece">Stückzahl:</label>
-                    <input type="number" id="piece" min="1"> <br>
-                    <button>In den Warenkorb</button>
-                </div>
-            </section>
-            <section id="review">
-            
-                <h2>Kundenrezensionen</h2>
-                <div id="reviewcontainer">
-                    <img id="zoom" src="../../pictures/ErdbeereSchokoKuchen1.jpg" width="300px">
-                    <div id="text">
-                        <h4>Samed Ünal sagt:</h4>
-                        <p>"CakeCraft" ist eine E-Konditorei und backt Kuchen und Torten, welche dann auf der Webseite verkauft werden.<br> Die Kuchen sehen alle sehr lecker aus,
-                            also fiehl es mir schwer eine Entscheidung zu treffen.<br> Am Ende habe ich doch einen perfekten Kuchen gefunden. Man kann ebenso noch Extra-Zutaten hinzufügen,
-                            die das Kuchen noch attraktiver gemacht hat. <br>
-                            "CakeCraft" benutzt einen eigenen Lieferdienst, die darauf achten, dass die Kuchen unversehrt beim Kunden ankommen. <br> 
-                            Ich war überrascht, als ich meine Lieferung nach nicht einmal einem Tag erhalten habe.<br>
-                            Abschließend kann ich sagen, dass mein Kuchen super lecker war und ich würde "CakeCraft" jedem empfehlen.
-                        </p>
+                    <div id="credentials">
+                        <div class="field">
+                            <label for="vorname">Vorname</label>
+                            <input type="text" id="vorname" name="vorname" placeholder="Vorname" required>   
+                        </div>
+                        <div class="field">
+                            <label for="nachname">Nachname</label>      
+                            <input type="text" id="nachname" name="nachname" placeholder="Nachname" required>
+                        </div>
                     </div>
-                </div>
+                    <div class="field">
+                        <label for="email">Email-Adresse</label>      
+                        <input type="email" id="email" name="email" placeholder="email@musterdomain.com" required>
+                    </div>
+                    <div id="combine">
+                        <div class="field">
+                            <label for="nachricht">Deine Nachricht</label>     
+                            <textarea id="nachricht" name="nachricht" rows="5" placeholder="Bitte schreibe deine Nachricht..." required></textarea>
+                        </div>
+                        <div id="button-container">
+                            <button type="submit" class="submit-btn">Verschicken</button>
+                        </div>
+                    </div>
+                </form>
                 
             </section>
-            <section id="relatedproducts">
-                <h2>Ähnliche Produkte</h2>
-                <div id="gallery">
-                    <div class="box">
-                        <img src="../../pictures/Erdbeerkuchen.jpg" width="300">
-                        <h3>Erdbeerkuchen</h3>
-                        <p>35€</p>
-                    </div>
-                    <div class="box">
-                        <img src="../../pictures/Schokotorte.jpg" width="370">
-                        <h3>Schokotorte</h3>
-                        <p>40€</p>
-                    </div>
-                    <div class="box">
-                        <img src="../../pictures/Schokokuchen1.jpg" width="270">
-                        <h3>Schokokuchen</h3>
-                        <p>30€</p>
-                    </div>
-                    <div class="box">
-                        <img src="../../pictures/BiscoffCake1.jpg" width="210">
-                        <h3>Biscoffkuchen</h3>
-                        <p>Preis: 45€</p>
-                    </div>
-                    
-                </div>
-            </section>
-            -->
         </main>
 
 
