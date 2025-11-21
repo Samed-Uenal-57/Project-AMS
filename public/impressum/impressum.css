@@ -1,16 +1,17 @@
-#impressum {
-  color: black;
-  padding: 0px;
+main {
+  padding: 60px 80px;
+  
+}
+
+.block{
+  margin-bottom: 40px;
 }
 
 #external_link {
-text-decoration: none;
-  color:black;
-  margin-left: 15px;
+  text-decoration: underline;
+  color:#E63946;
+
 }
 
-main {
-  padding: 60px 80px;
-  font-size: 1.5rem;
-}
+
 

@@ -1,15 +1,10 @@
-h2{
-  font-size:40px;
-  margin: 0px;
-}
+
 
 main {
   padding: 60px 40px;
 }
 
 p {
-  background-color: lightgray;
-  font-size: 2rem;
   line-height: 1.5;
   padding: 1rem;
 }

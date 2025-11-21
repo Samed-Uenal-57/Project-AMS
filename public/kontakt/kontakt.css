@@ -4,20 +4,9 @@
     display: flex;
     margin-top: 20px;
     margin: 60px;
-    
-}
-
-#contact{
     gap: 50px;
 }
 
-#contact h1{
-    font-size: 40px;
-}
-
-#contact h3{
-    color:#4c4c4c;
-}
 
 .contact-text{
     max-width: 600px;
@@ -25,45 +14,41 @@
 
 #info-box{
     display:flex;
-    gap: 75px;
+    gap: 50px;
 }
 
 #img-container{
     width: 600px;
     height: 450px;
     object-fit: cover;
+    border-radius: 12px;
 }
 
 #img-container2{
     width: 900px;
     height: auto;
     object-fit: cover;
+    border-radius: 12px;
 }
 
 /*Formular*/
 
 #contact-form{
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
-    margin: 60px;
-    padding: 20px; 
+    
+    padding: 60px 80px; 
 }
 
-contact-form h2{
-    font-size: 20px;
-    margin-bottom: 25px;
-}
+
 
 .form{
     display: flex;
     flex-direction: column;
     gap:25px;
+    max-width: 700px;
 }
 
 #credentials{
     display: flex;
-    flex-direction: row;
     gap: 25px;
 }
 
@@ -74,17 +59,14 @@ contact-form h2{
 }
 
 label{
-    font-size: 13px;
     margin-bottom: 5px;
     color:#222;
-    font-weight: 500;
 }
 
 input, textarea{
     padding: 10px 12px;
     border: 1px solid #e2e2e2;
     border-radius: 6px;
-    font-size:14px;
     background-color: #fafafa;
     transition: all 0.5s ease;
 }
@@ -100,9 +82,7 @@ textarea{
 }
 
 #button-container{
-    margin-top: 20px;
     margin-left: 20px;
-    
 }
 
 .submit-btn{
@@ -117,6 +97,7 @@ textarea{
 
 #combine{
     display: flex;
+    gap:30px;
     flex-direction: row;
     align-items: center;
     
