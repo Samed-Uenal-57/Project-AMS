@@ -7,7 +7,7 @@ const PORT = 5500;
 app.use(express.static(path.join(__dirname)));
 
 // SPA: Alle Anfragen auf index.html umleiten
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index/index.html'));
 });
 

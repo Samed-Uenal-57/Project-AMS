@@ -5,7 +5,7 @@ html, body {
 }
 
 #heroes{
-    background-image: url('Project-Web/pictures/BiscoffKuchen1.jpg');
+    background-image: url('/pictures/BiscoffKuchen1.jpg');
     background-size:cover;
     background-position: center;
     color:white;
@@ -77,9 +77,10 @@ h3, #bestseller h1{
 .wholebox{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 60px;
     margin-top: 40px;
+    max-width: auto;
 }
 
 .einkauf img{
