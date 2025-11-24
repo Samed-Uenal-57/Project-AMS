@@ -1,0 +1,134 @@
+/*General*/
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*Überschriften*/
+
+h1{
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+h3{
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+h4{
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+h5{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+h6{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+p{
+    color: #6A6A6A;
+    font-size: 16px;
+}
+
+/*Head-Section*/
+
+header h1{
+    padding: 10px;
+    padding-left: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, rgb(37, 18, 13) 1%, rgb(214, 56, 28));
+    height: 165px;
+    padding: 0 40px; 
+}
+
+#Cake {
+    font-size: 60px;
+    font-weight: bolder;
+    color:rgb(214, 56, 28);
+}
+
+#Craft {
+    font-size: 60px;
+    font-weight: bolder;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: inherit;
+}
+
+#hero-text{
+    max-width:380px;
+}
+
+ul {
+    list-style: none;  
+    padding: 0;
+    margin: 0;
+
+}
+
+li {
+    display: inline;    
+    margin-right: 15px; 
+
+}
+
+header a, footer a {
+    text-decoration: none;
+    color: white;
+    margin-left: 15px;
+}
+
+button {
+    border-radius: 10px;
+    width: auto;
+    min-height: 50px;
+    font-weight: bolder;
+    transition: background-color 0.5s ease ,transform 0.3s ease;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color: #B91C1C;
+}
+
+button:active {
+    
+    transform: scale(0.9);
+}
+
+/*Footer*/
+
+footer{
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgb(214, 56, 28), rgb(37, 18, 13));
+    height: 165px;
+}

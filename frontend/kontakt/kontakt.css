@@ -1,0 +1,104 @@
+/*Kontaktiere Uns*/
+
+#contact,#adress{
+    display: flex;
+    margin-top: 20px;
+    margin: 60px;
+    gap: 50px;
+}
+
+
+.contact-text{
+    max-width: 600px;
+}
+
+#info-box{
+    display:flex;
+    gap: 50px;
+}
+
+#img-container{
+    width: 600px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+#img-container2{
+    width: 900px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/*Formular*/
+
+#contact-form{
+    
+    padding: 60px 80px; 
+}
+
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+    max-width: 700px;
+}
+
+#credentials{
+    display: flex;
+    gap: 25px;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+label{
+    margin-bottom: 5px;
+    color:#222;
+}
+
+input, textarea{
+    padding: 10px 12px;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    background-color: #fafafa;
+    transition: all 0.5s ease;
+}
+
+input:focus,textarea:focus{
+    border-color: #222;
+    background-color: rgb(231, 228, 228);
+    outline: none;
+}
+
+textarea{
+    resize: none;
+}
+
+#button-container{
+    margin-left: 20px;
+}
+
+.submit-btn{
+    background-color: #000;
+    color:#fff;
+    font-weight: 500;
+    border:none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    transition: background-color 0.5s ease, transform 0.5 ease;
+}
+
+#combine{
+    display: flex;
+    gap:30px;
+    flex-direction: row;
+    align-items: center;
+    
+}
