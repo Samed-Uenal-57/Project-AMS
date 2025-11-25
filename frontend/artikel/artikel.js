@@ -33,4 +33,12 @@ document.addEventListener("DOMContentLoaded", () =>{
             container.appendChild(div);
         })
         .catch(err => console.error("Fehler beim Laden: ", err));
+
+    fetch(`http://localhost:8000/api/produkt/alle`)
+        .then(res=> res.json())
+        .then(p=> {
+            
+        })
 });
+
+
