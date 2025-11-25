@@ -17,27 +17,21 @@
     border-radius: 12px;
     object-fit: cover;
 }
-
-#product .info{
+.settings{
     display: flex;
-    flex-direction: column;
-    gap: 10px
+    flex-direction: row;
+    gap: 40px;
 }
 
-#product h2{
-    font-size: 28px;
-    margin-bottom: 10px;
-}
+
 
 .price{
     font-weight: bold;
-    font-size: 20px;
     margin: 0;
 }
 
 .mwst{
     color:#6a6a6a;
-    font-size: 14px;
     margin-bottom: 20px;
 }
 
@@ -47,7 +41,7 @@ label{
 }
 
 input[type="number"]{
-    width:60px;
+    width:40px;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5px;
@@ -82,7 +76,6 @@ input[type="number"]{
 }
 
 #customer-img h3{
-    font-size:24px;
     margin-bottom: 20px;
     padding-top:20px;
 }
@@ -114,7 +107,6 @@ input[type="number"]{
 }
 
 #review h2{
-    font-size: 24px;
     padding-top:20px;
     margin-left: 20px;
 }
