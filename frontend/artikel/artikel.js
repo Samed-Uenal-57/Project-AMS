@@ -33,10 +33,29 @@ document.addEventListener("DOMContentLoaded", () =>{
             container.appendChild(div);
         })
         .catch(err => console.error("Fehler beim Laden: ", err));
+    const container3 = document.getElementById("whole-img-review");
+    fetch(`http://localhost:8000/api/produkt/gib/${id}`)
+    .then(res => res.json())
+    .then(p=> {
+        const review = p.bilder.slice(1);
+        review.forEach(bild =>{
+            const bildPath = 'http://localhost:8000/' + bild.bildpfad;
+            const div2 = document.createElement("div");
+            div2.className = "customer-img-review";
+            div2.innerHTML = `
+                <div>
+                    <img class="size" src= "${bildPath}" alt="${p.bezeichnung}">
+                </div>        
+            `;
+            container3.appendChild(div2);
+        })    
+            
+    })
+    .catch(err => console.error("Fehler beim Laden: ", err));
+    
 
-    
+
     const container2 = document.getElementById("gallery");
-    
     fetch("http://localhost:8000/api/produkt/alle")
     .then(res=> res.json())
     .then(produkte => {
