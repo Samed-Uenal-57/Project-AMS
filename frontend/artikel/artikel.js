@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", () =>{
                 </div>
                 <div id="description">
                     <h2>${p.bezeichnung}</h2>
-                    <p>Preis: ${p.preis} € </p>
+                    <p class=price>${p.preis} € </p>
                     <p>${p.beschreibung}</p>
                     <label for="extra">Zusatzoptionen:</label>
                     <br>
                     <input type="radio" id="extra2" name="extra" value="keine" checked>
                     <label for="check">Keine</label><br>
                     <input type="radio" id="extra1" name="extra" value="beeren">
-                    <label for="check">Schmetterlinge (essbar)</label><br>
+                    <label for="check">Schmetterlinge (essbar, + 2,50 €)</label><br>
                     <label for="piece">Stückzahl:</label>
                     <input type="number" id="piece" name="piece" value="1" min="1" step="1"> <br>
                     <button class="button">In den Warenkorb</button>
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             div1.innerHTML = `
                 <a href="../artikel/artikel.html?id=${p.id}">
                 <img src= "${bildPfad}" alt="${p.bezeichnung}">
-                <h2>${p.bezeichnung}</h2>
+                <h3>${p.bezeichnung}</h3>
                 <p>Preis: ${p.preis} € </p>
             `;
             container2.appendChild(div1)

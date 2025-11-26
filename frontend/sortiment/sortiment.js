@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                 <a href="../artikel/artikel.html?id=${p.id}">
                 <img src= "${bildPfad}" alt="${p.bezeichnung}">
                 <h2>${p.bezeichnung}</h2>
-                <p>Preis: ${p.preis} € </p>
+                <p class=price>${p.preis} € </p>
                 <p>${p.beschreibung}</p>
             `;
             container.appendChild(div);
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                 <a href="../artikel/artikel.html?id=${p.id}">
                 <img src= "${bildPfad}" alt="${p.bezeichnung}">
                 <h2>${p.bezeichnung}</h2>
-                <p>Preis: ${p.preis} € </p>
+                <p class=price>${p.preis} € </p>
                 <p>${p.beschreibung}</p>
             `;
             container2.appendChild(div2);
