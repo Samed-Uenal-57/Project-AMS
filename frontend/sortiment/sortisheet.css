@@ -103,7 +103,11 @@ h3, #bestseller h1{
 .einkauf img:hover{
     transform: scale(1.1);
 }
-
+h4{
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
 #bestseller{
     margin-left: 50px;
     margin-right: 50px;
