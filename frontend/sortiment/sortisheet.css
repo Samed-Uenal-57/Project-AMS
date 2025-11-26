@@ -70,14 +70,16 @@ a{
     color:black;
 }
 
-h3, #bestseller h1{
+#bestseller h1{
     font-size: 60px;
 }
-.price{
-    font-size:20px;
-    
-    font-weight: bold;
+
+h3{
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 14px;
 }
+
 .wholebox{
     display: flex;
     flex-direction: row;

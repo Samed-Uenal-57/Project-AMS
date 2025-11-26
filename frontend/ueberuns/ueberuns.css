@@ -1,12 +1,13 @@
 
 
 main {
-  padding: 60px 40px;
+  padding: 60px 80px;
 }
 
 p {
   line-height: 1.5;
   padding: 1rem;
+  background-color: lightgray;
 }
 
 .about_content, .our_team {
@@ -15,7 +16,6 @@ p {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-
 }
 
 .about_content p , .our_team p{
@@ -31,8 +31,6 @@ p {
   height: 100%;
   object-fit: cover;
 }
-
-
 
 @media (max-width: 768px) {
   .about_content , .our_team{
