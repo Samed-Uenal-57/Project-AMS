@@ -70,8 +70,14 @@ a{
     color:black;
 }
 
-h3, #bestseller h1{
+#bestseller h1{
     font-size: 60px;
+}
+
+h3{
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 14px;
 }
 
 .wholebox{
