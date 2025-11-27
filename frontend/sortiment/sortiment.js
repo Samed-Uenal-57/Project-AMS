@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             div2.innerHTML = `
                 <a href="../artikel/artikel.html?id=${p.id}">
                 <img src= "${bildPfad}" alt="${p.bezeichnung}">
-                <h2>${p.bezeichnung}</h2>
+                <h4>${p.bezeichnung}</h4>
                 <p class=price>${p.preis} € </p>
                 <p>${p.beschreibung}</p>
             `;
