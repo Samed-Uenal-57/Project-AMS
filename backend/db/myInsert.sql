@@ -41,3 +41,30 @@ INSERT INTO Produktbild (id, bildpfad, produktid) VALUES (13,'produktbild/Beeren
 INSERT INTO Produktbild (id, bildpfad, produktid) VALUES (14,'produktbild/Bienenstich.jpg', 14);
 INSERT INTO Produktbild (id, bildpfad, produktid) VALUES (15,'produktbild/Hefeteig-Apfelstrudel.jpg', 15);
 INSERT INTO Produktbild (id, bildpfad, produktid) VALUES (16,'produktbild/ZitronenkuchenStapel.jpg', 16);
+
+--Review Bilder--
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (26,'produktbild/Schokokuchenreview.jpg', 2);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (27,'produktbild/Schokokuchenreview2.jpg', 2);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (28,'produktbild/Schokokuchenreview3.jpg', 2);
+
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (29,'produktbild/Erdbeerkuchenreview.jpg', 4);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (30,'produktbild/Erdbeerkuchenreview1.jpg', 4);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (31,'produktbild/Erdbeerkuchenreview2.jpg', 4);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (32,'produktbild/Erdbeerkuchenreview3.jpg', 4);
+
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (33,'produktbild/BiscoffKuchenreview.jpg', 5);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (34,'produktbild/BiscoffKuchenreview2.jpg', 5);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (35,'produktbild/BiscoffKuchenreview3.jpg', 5);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (36,'produktbild/BiscoffKuchenreview4.jpg', 5);
+
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (37,'produktbild/KaesekuchenMitMascarponereview.jpg', 6);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (38,'produktbild/KaesekuchenMitMascarponereview2.jpg', 6);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (39,'produktbild/KaesekuchenMitMascarponereview3.jpg', 6);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (40,'produktbild/Apfelkuchen-review.jpg', 9);
+
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (41,'produktbild/HimbeerMascarponereview.jpg', 10);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (42,'produktbild/HimbeerMascarponereview2.jpg', 10);
+
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (43,'produktbild/Trueffeltortereview.jpg', 11);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (44,'produktbild/Trueffeltortereview2.jpg', 11);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (45,'produktbild/Trueffeltortereview3.jpg', 11);
