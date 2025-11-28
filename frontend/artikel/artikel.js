@@ -7,30 +7,47 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     fetch(`http://localhost:8000/api/produkt/gib/${id}`)
         .then(res => res.json())
-        .then(p=> {
+        .then(p => {
             const bildPath = 'http://localhost:8000/' + p.bilder[0].bildpfad;
             const div = document.createElement("div");
             div.className = "settings";
             div.innerHTML = `
-                <div id="img">
-                    <img src= "${bildPath}" alt="${p.bezeichnung}">
-                </div>
-                <div id="description">
-                    <h2>${p.bezeichnung}</h2>
-                    <p class=price>${p.preis} € </p>
-                    <p>${p.beschreibung}</p>
-                    <label for="extra">Zusatzoptionen:</label>
-                    <br>
-                    <input type="radio" id="extra2" name="extra" value="keine" checked>
-                    <label for="check">Keine</label><br>
-                    <input type="radio" id="extra1" name="extra" value="beeren">
-                    <label for="check">Schmetterlinge (essbar, + 2,50 €)</label><br>
-                    <label for="piece">Stückzahl:</label>
-                    <input type="number" id="piece" name="piece" value="1" min="1" step="1"> <br>
-                    <button class="button">In den Warenkorb</button>
-                </div>        
+                <form id="artikelForm">
+                    <div id="img">
+                        <img src= "${bildPath}" alt="${p.bezeichnung}">
+                    </div>
+                    <div id="description">
+                        <h2>${p.bezeichnung}</h2>
+                        <p class=price>${p.preis} € </p>
+                        <p>${p.beschreibung}</p>
+                        <label for="extra">Zusatzoptionen:</label>
+                        <br>
+                        <input type="radio" id="extra2" name="extra" value="keine" checked>
+                        <label for="check">Keine</label><br>
+                        <input type="radio" id="extra1" name="extra" value="beeren">
+                        <label for="check">Schmetterlinge (essbar, + 2,50 €)</label><br>
+                        <label for="piece">Stückzahl:</label>
+                        <input type="number" id="piece" name="piece" value="1" min="1" step="1"> <br>
+                        <button class="button" type="submit">In den Warenkorb</button>
+                    </div>
+                </form>
             `;
             container.appendChild(div);
+
+            const artikelForm = document.getElementById("artikelForm");
+            artikelForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const id = p.id
+                const piece = event.target["piece"].value
+                const extra = event.target["extra"].value
+
+                localStorage.setItem('cart', JSON.stringify({products: [{id, piece, extra}]}));
+
+                //TODO: Add correct update cart
+                // const cart = JSON.parse(localStorage.getItem('cart'))
+                // const products = cart.products
+            });
         })
         .catch(err => console.error("Fehler beim Laden: ", err));
 
@@ -57,5 +74,3 @@ document.addEventListener("DOMContentLoaded", () =>{
     })
     .catch(err => console.error("Fehler beim Laden: ", err));
 });
-
-

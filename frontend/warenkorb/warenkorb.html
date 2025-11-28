@@ -6,6 +6,7 @@
 
         <link rel="stylesheet" type="text/css" href="warenkorb.css">
         <link rel="stylesheet" type="text/css" href="../general.css">
+        <script src="warenkorb.js"></script>
         <title>Warenkorb</title>
     </head>
     <body>
@@ -23,43 +24,8 @@
             <section id="order">
                 <h2>Ihr Warenkorb:</h2>
                 <div id="whole-boxes">
-                    <div class="order-box">
-                        <a href="../artikel/artikel.html">
-                            <img src="../../pictures/ErdbeereSchokoKuchen1.jpg" width="200">
-                        </a>
-                        <div class="cake">
-                            <p>Name: Erdbeer-Schokokuchen</p>
-                            <p>Kosten: 35,00€</p>
-                            <label for="amount">Menge: </label>
-                            <input type="number" class="amount" min="1">
-                            <button class="delete-btn"> Aus Warenkorb entfernen</button>
-                            <p>Zusatzoptionen: Extra-Beeren(2,50€)</p>
-                            <p>Beschreibung:</p>
-                            <p id="description">
-                                Leckerer Erdbeer-Schokokuchen mit <br> Erdbeer- und Blaubeerstücken
-                            </p>
-                        </div>
-                    </div>
-                    <div class="order-box">
-                        <a href="../artikel/artikel.html">
-                            <img src="../../pictures/BiscoffCake1.jpg" width="200">
-                        </a>
-                        <div class="cake">
-                            <p>Name: Biscoff-Kuchen</p>
-                            <p>Kosten: 30€</p>
-                            <label for="amount">Menge: </label>
-                            <input type="number" class="amount" min="1">
-                            <button class="delete-btn">Aus Warenkorb entfernen</button>
-                            <p>Zusatzoptionen: Extra Biscoff-Kekse(4,00€)</p>
-                            <p>Beschreibung:</p>
-                            <p id="description">
-                                Ein cremiger Karamelltraum mit Lotus Biscoff-Keksen <br>
-                                Hier findest du einen knusprigen Keksboden, <br> 
-                                Karamellcreme im Übermaß und Toppings aus feinen Keksstreuseln <br>
-                                und ein paar Biscoff-Keksen 
-                            </p>
-                        </div>
-                    </div>
+                    <div id="order-boxes"></div>
+
                     <div class="order-box1">
                         <div id="gesamtkosten">
                             <h2>Gesamtkosten:</h2>
