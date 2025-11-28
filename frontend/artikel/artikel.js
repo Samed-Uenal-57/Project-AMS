@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                     <br>
                     <input type="radio" id="extra2" name="extra" value="keine" checked>
                     <label for="check">Keine</label><br>
-                    <input type="radio" id="extra1" name="extra" value="beeren">
+                    <input type="radio" id="extra1" name="extra" value="schmetterlinge">
                     <label for="check">Schmetterlinge (essbar, + 2,50 €)</label><br>
                     <label for="piece">Stückzahl:</label>
                     <input type="number" id="piece" name="piece" value="1" min="1" step="1"> <br>
@@ -31,8 +31,34 @@ document.addEventListener("DOMContentLoaded", () =>{
                 </div>        
             `;
             container.appendChild(div);
+            const basePrice = p.preis;
+            const priceElement = div.querySelector(".price");
+            const extraRadios = div.querySelectorAll("input[name='extra']");
+            const pieceInput = div.querySelector('#piece');
+
+            function updatePrice(){
+                let extra = 0;
+
+                const selected = div.querySelector("input[name='extra']:checked");
+                if (selected && selected.value === "schmetterlinge"){
+                    extra = 2.50;
+                }
+                const quantity = Number(pieceInput.value);
+                const finalPrice = (basePrice + extra) * quantity;
+                priceElement.textContent = finalPrice.toFixed(2) + " €";
+            }
+
+            extraRadios.forEach(radio =>{
+                radio.addEventListener("change", updatePrice);
+            });
+            pieceInput.addEventListener("input", updatePrice);
         })
         .catch(err => console.error("Fehler beim Laden: ", err));
+
+
+    
+
+
     const container3 = document.getElementById("whole-img-review");
     fetch(`http://localhost:8000/api/produkt/gib/${id}`)
     .then(res => res.json())
