@@ -42,5 +42,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 
     // TODO: Add removing item using updated cart
+    
     // localStorage.setItem('cart', updatedCart)
 });

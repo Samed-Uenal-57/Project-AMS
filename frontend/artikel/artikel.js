@@ -41,12 +41,32 @@ document.addEventListener("DOMContentLoaded", () =>{
                 const id = p.id
                 const piece = event.target["piece"].value
                 const extra = event.target["extra"].value
+                //localStorage.setItem('cart', JSON.stringify({products: [{id, piece, extra}]})); //debug
 
-                localStorage.setItem('cart', JSON.stringify({products: [{id, piece, extra}]}));
+                if (!localStorage.getItem('cart')) {
+                    localStorage.setItem('cart', JSON.stringify({products : [{id, piece, extra}]}));
+                    console.log("nothing here before, now - ", products);
+                } else {
+                    const cart = JSON.parse(localStorage.getItem('cart'))
+                    const products = cart.products
+                    console.log(products, " - what we had");
+                    //localStorage.setItem('cart', JSON.stringify({products : [{id, piece, extra}]}));
 
-                //TODO: Add correct update cart
-                // const cart = JSON.parse(localStorage.getItem('cart'))
-                // const products = cart.products
+                    if (products.some(p => p.id === id && p.extra === extra)) {
+                        //const existingProduct = products.find(p => p.id === id && p.extra === extra);
+                        //existingProduct.piece = parseInt(existingProduct.piece) + parseInt(piece);
+
+                        products.find(p => p.id === id && p.extra === extra).piece = parseInt(products.find(p => p.id === id && p.extra === extra).piece) + parseInt(piece)
+
+                    } else {
+                        products.push({id, piece, extra});
+
+                    }
+                    
+                    localStorage.setItem('cart', JSON.stringify({products}));
+                    
+                }
+
             });
         })
         .catch(err => console.error("Fehler beim Laden: ", err));
