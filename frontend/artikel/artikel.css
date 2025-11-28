@@ -87,11 +87,7 @@ input[type="number"]{
     justify-content: space-between;
 }
 
-.author{
-    display: flex;
-    flex-direction: column;
 
-}
 
 .size{
     width: 400px;
@@ -129,7 +125,7 @@ input[type="number"]{
     border-radius: 12px;
 }
 
-/*Ähnliche Produkte*/
+/*Andere Produkte*/
 
 #relatedproducts{
     background-color: #fff9f5;
