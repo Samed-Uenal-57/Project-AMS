@@ -73,18 +73,20 @@ input[type="number"]{
 #customer-img{
     background-color: #fff9f5;
     margin: 80px auto;
-    padding: 0 40px;
+    
 }
 
 #customer-img h2{
     margin-bottom: 20px;
     padding-top:20px;
+    margin-left: 20px;
 }
 
 #whole-img-review{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 80px;
+    justify-content:center;
 }
 
 
