@@ -21,35 +21,74 @@ document.addEventListener("DOMContentLoaded", () =>{
                     <p>${p.beschreibung}</p>
                     <label for="extra">Zusatzoptionen:</label>
                     <br>
-                    <input type="radio" id="extra2" name="extra" value="keine" checked>
+                    <input type="radio" id="extra1" name="extra" value="keine" checked>
                     <label for="check">Keine</label><br>
-                    <input type="radio" id="extra1" name="extra" value="beeren">
+                    <input type="radio" id="extra2" name="extra" value="schmetterlinge">
                     <label for="check">Schmetterlinge (essbar, + 2,50 €)</label><br>
+                    <input type="radio" id="extra3" name="extra" value="schokoStueckchen">
+                    <label for="check">Schoko-Stückchen (+ 1,50 €)</label><br>
                     <label for="piece">Stückzahl:</label>
                     <input type="number" id="piece" name="piece" value="1" min="1" step="1"> <br>
                     <button class="button">In den Warenkorb</button>
                 </div>        
             `;
             container.appendChild(div);
+            const basePrice = p.preis;
+            const priceElement = div.querySelector(".price");
+            const extraRadios = div.querySelectorAll("input[name='extra']");
+            const pieceInput = div.querySelector('#piece');
+
+            function updatePrice(){
+                let extra = 0;
+
+                const selected = div.querySelector("input[name='extra']:checked");
+                if (selected && selected.value === "schmetterlinge"){
+                    extra = 2.50;
+                }
+                else if(selected && selected.value === "schokoStueckchen"){
+                    extra = 1.50;
+                }
+                const quantity = Number(pieceInput.value);
+                const finalPrice = (basePrice + extra) * quantity;
+                priceElement.textContent = finalPrice.toFixed(2) + " €";
+            }
+
+            extraRadios.forEach(radio =>{
+                radio.addEventListener("change", updatePrice);
+            });
+            pieceInput.addEventListener("input", updatePrice);
         })
         .catch(err => console.error("Fehler beim Laden: ", err));
+
+
+    
+
+
     const container3 = document.getElementById("whole-img-review");
     fetch(`http://localhost:8000/api/produkt/gib/${id}`)
     .then(res => res.json())
     .then(p=> {
         const review = p.bilder.slice(1);
-        review.forEach(bild =>{
-            const bildPath = 'http://localhost:8000/' + bild.bildpfad;
+        if(review.length === 0){
             const div2 = document.createElement("div");
-            div2.className = "customer-img-review";
+            div2.className = "no-reviews";
             div2.innerHTML = `
-                <div>
-                    <img class="size" src= "${bildPath}" alt="${p.bezeichnung}">
-                </div>        
+                <p>Leider gibt es noch keine Kundenbilder dazu.</p>
             `;
             container3.appendChild(div2);
-        })    
-            
+        } else{
+            review.forEach(bild =>{
+                const bildPath = 'http://localhost:8000/' + bild.bildpfad;
+                const div2 = document.createElement("div");
+                div2.className = "customer-img-review";
+                div2.innerHTML = `
+                    <div>
+                        <img class="size" src= "${bildPath}" alt="${p.bezeichnung}">
+                    </div>        
+                `;
+                container3.appendChild(div2);
+            })    
+        }
     })
     .catch(err => console.error("Fehler beim Laden: ", err));
     
