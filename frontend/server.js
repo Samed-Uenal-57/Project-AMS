@@ -14,6 +14,6 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log('Frontend läuft auf http://localhost:', PORT);
-  console.log('Usage: http://localhost:' + PORT);
+  console.log('Usage: http://localhost:',  PORT);
   console.log('-------------------------------------------');
 });
