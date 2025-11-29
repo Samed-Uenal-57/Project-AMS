@@ -39,10 +39,6 @@ p{
     margin-top:30px;
 }
 
-.amount{
-    max-width:25px;
-}
-
 .delete-btn{
     width: auto;
     height: auto;
@@ -101,4 +97,13 @@ p{
     border: none;
     border-radius: 10px;
     font-size: 16px;
+}
+
+input[type="number"]{
+    width:40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top:6px;
+    text-align: center;
 }

@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             div1.innerHTML = `
                 <a href="../artikel/artikel.html?id=${p.id}">
                 <img src= "${bildPfad}" alt="${p.bezeichnung}">
-                <h3>${p.bezeichnung}</h3>
+                <h4>${p.bezeichnung}</h4>
                 <p>Preis: ${p.preis} € </p>
             `;
             container2.appendChild(div1)
