@@ -1,7 +1,5 @@
-.order-box{
+#whole-boxes{
     display: flex;
-    background-color: #fff6f5;
-    min-height: 300px;
-    flex-direction: row;
-    gap:20px;
+    flex-direction: column;
+    gap: 20px;
 }
