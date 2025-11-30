@@ -22,6 +22,7 @@ p{
     min-height: 300px;
     flex-direction: row;
     gap:20px;
+
 }
 
 .order-box1{
@@ -29,20 +30,23 @@ p{
     flex-direction: row;
     background-color: #fff6f5;
     min-height: 300px;
-    flex-direction: row;
+    
     gap:50px;
     padding: 40px;
     border-radius: 10px;
 }
 
 .cake{
-    margin: 50px 50px 50px 0px;
+    margin-top:50px;
+    margin-left:50px;
+    display: flex;
+    flex:1;
+    
+}
+.details{
+    flex:1;
 }
 
-.delete-btn{
-    width: auto;
-    height: auto;
-}
 
 #description{
     font-weight:normal; 
@@ -57,8 +61,14 @@ p{
 .check {
     display: flex;
     flex-direction: column;
-
 }
+.sum{
+    min-width: 200px;
+    text-align: right;
+    align-self: center;
+    margin-right: 50px;
+}
+
 
 #gesamtkosten {
     flex: 1;
