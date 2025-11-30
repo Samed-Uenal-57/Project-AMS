@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const div = document.createElement("div");
     div.innerHTML = `
-        <p>Kaufdatum: ${date.toLocaleDateString("de-DE")} , ${date.toLocaleTimeString("de-DE")} Uhr</p>
+        <p>Kaufdatum: ${date.toLocaleDateString("de-DE")}
     `;
     container.appendChild(div);
 });

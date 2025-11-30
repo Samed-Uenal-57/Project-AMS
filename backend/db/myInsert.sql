@@ -73,3 +73,8 @@ INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (46,'produktbild/Bienen
 INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (47,'produktbild/Bienenstichreview2.jpg', 14);
 INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (48,'produktbild/Bienenstichreview3.jpg', 14);
 INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (49,'produktbild/Bienenstichreview4.jpg', 14);
+
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (50,'produktbild/Apfelstrudelreview.jpg', 15);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (51,'produktbild/Apfelstrudelreview2.jpg', 15);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (52,'produktbild/Apfelstrudelreview3.jpg', 15);
+INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (53,'produktbild/Apfelstrudelreview4.jpg', 15);

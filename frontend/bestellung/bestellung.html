@@ -24,37 +24,46 @@
   </header>
 
   <main>
-    <div id="confirmation">
-        <h2>Vielen Dank für deine Bestellung!</h2>
-        <div id= "order">
-            <p>Bestellnummer: <strong> 1</strong></p>
+    <h2>Vielen Dank für deine Bestellung!</h2>
+    <div id="confirmation-box">
+      <h3>Bestelldetails</h3>
+      <div class="order-box">
+        
+        <div id="confirmation"></div>
+        <div>
+            <p>Bestellnummer: <strong> 1</strong> <br>
             <p>Voraussichtliche Lieferzeit: <strong>2-3 Tage</strong></p>
         </div>
-        <div id="adress">
-            <h3>Lieferadresse:</h3>
-            <p>
-                Max Mustermann <br>
-                Musterstraße 4 <br>
-                12345 Musterstadt
-            </p>
-        </div>
-        <div id="products">
-            <h3>Bestellte Artikel: </h3>
-            <div id="whole-boxes">
-                <div class="cake">
-                    <img src="../../pictures/ErdbeereSchokoKuchen1.jpg" width="200">
-                    <p>Name: Erdbeer-Schokokuchen</p>
-                    <p>Einzelpreis: 35,00€</p>
-                    <p>Zusatzoptionen: Extra-Beeren(2,50€)</p>
-                </div>
-                <div class="cake">
-                    <img src="../../pictures/BiscoffCake1.jpg" width="200">
-                    <p>Name: Biscoff-Kuchen</p>
-                    <p>Einzelpreis: 30€</p>
-                    <p>Zusatzoptionen: Extra Biscoff-Kekse(4,00€)</p>
-                </div>
-            </div>
-        </div>
+      </div>
+      <h3>Lieferadresse:</h3>
+      <div class="order-box">
+          
+          <p>
+              Max Mustermann <br>
+              Musterstraße 4 <br>
+              12345 Musterstadt
+          </p>
+      </div>
+      <h3>Zahlungsart</h3>
+      <div class="order-box">
+        <p>Paypal</p>
+      </div>
+      <h3>Bestellübersicht: </h3>
+      <div class="order-box" id="last-box">
+          <div class="line">
+            <span>Zwischensumme:</span>
+            <span>65,00 €</span>
+          </div>
+          <div class="line">  
+            <span>Versand:</span>
+            <span>4,50 €</span>
+          </div>
+          <div class="line">
+            <span><strong>Gesamtsumme:</span>
+            <span>69,50 €</span></strong>
+          </div>
+      </div>
+  
     </div>
     
   </main>

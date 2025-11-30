@@ -3,3 +3,33 @@
     flex-direction: column;
     gap: 20px;
 }
+
+main{
+    margin-left: 50px;
+}
+
+.order-box{
+    border: 1px solid grey;
+    border-radius: 6px;
+    max-width: 400px;
+    padding: 10px;
+    
+}
+
+#confirmation-box{
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+#last-box{
+    
+    margin-bottom: 50px;
+}
+
+.line{
+    display: flex;
+    justify-content: space-between;
+    
+}
