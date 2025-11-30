@@ -4,7 +4,7 @@ a {
 }
 
 img{
-    margin-top:40px;
+    margin: 50px;
     max-height:200px;
 }
 
@@ -12,8 +12,8 @@ p{
     font-weight: bolder;
 }
 
-#order h2, img{
-    margin-left:40px;
+#order h2{
+    margin-left:50px;
 }
 
 .order-box{
@@ -36,7 +36,7 @@ p{
 }
 
 .cake{
-    margin-top:30px;
+    margin: 50px 50px 50px 0px;
 }
 
 .delete-btn{
@@ -71,13 +71,13 @@ p{
 
 #summen h4{
     margin-bottom: 10px;
-    font-size: 20px;
 }
 
 #summen li{
+    text-align: right;
     font-weight: normal;
     margin-bottom: 8px;
-    font-size:16px;
+    font-size:20px;
 }
 
 .mwst-hinweis{

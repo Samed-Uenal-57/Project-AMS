@@ -1,12 +1,14 @@
 /*Kontaktiere Uns*/
 
-#contact,#adress{
-    display: flex;
-    margin-top: 20px;
-    margin: 60px;
-    gap: 50px;
+main {
+  margin-left: 50px;
 }
 
+
+#contact,#adress{
+    display: flex;
+    gap: 50px;
+}
 
 .contact-text{
     max-width: 600px;
@@ -29,15 +31,14 @@
     height: auto;
     object-fit: cover;
     border-radius: 12px;
+    margin: 50px;
 }
 
 /*Formular*/
 
 #contact-form{
-    
-    padding: 60px 80px; 
+   margin-bottom: 50px;
 }
-
 
 
 .form{
