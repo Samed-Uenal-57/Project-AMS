@@ -30,10 +30,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                         <input type="number" class="amount" min="1" value="${product.piece}">
                         <button class="delete-btn"> Aus Warenkorb entfernen</button>
                         <p>Zusatz: ${extra}</p>
-                        <p>Beschreibung:</p>
-                        <p id="description">
-                            ${p.beschreibung}
-                        </p>
+                        
                     </div>
                 `;
                 container.appendChild(div);
@@ -58,19 +55,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
             })
             .catch(err => console.error("Fehler beim Laden: ", err));
-        
-
     
-
-
-
-
-
-    
-        
     });
-
-
-
 
 });

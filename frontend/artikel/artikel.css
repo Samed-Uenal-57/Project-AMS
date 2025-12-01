@@ -18,7 +18,7 @@
     border-radius: 12px;
     object-fit: cover;
 }
-.settings{
+#artikelForm{
     display: flex;
     flex-direction: row;
     gap: 40px;

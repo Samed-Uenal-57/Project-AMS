@@ -6,7 +6,6 @@
 
         <link rel="stylesheet" type="text/css" href="warenkorb.css">
         <link rel="stylesheet" type="text/css" href="../general.css">
-        <script src="warenkorb.js"></script>
         <title>Warenkorb</title>
     </head>
     <body>
@@ -24,8 +23,44 @@
             <section id="order">
                 <h2>Ihr Warenkorb:</h2>
                 <div id="whole-boxes">
-                    <div id="order-boxes"></div>
-                  
+                    <div class="order-box">
+                        <a href="../artikel/artikel.html">
+                            <img src="../../pictures/ErdbeereSchokoKuchen1.jpg" width="200">
+                        </a>
+                        <div class="cake">
+                            <div class="details">
+                                <p>Name: Erdbeer-Schokokuchen</p>
+                                <p>Einzelpreis: 35,00€</p>
+                                <label for="amount">Menge: </label>
+                                <input type="number" class="amount" value="1" min="1" step="1">
+                                <button class="delete-btn"> Aus Warenkorb entfernen</button>
+                                <p>Zusatzoptionen: Extra-Beeren(2,50€)</p>
+                            </div>
+                            <div class="sum">
+                                <span><strong>37,50 €</strong></span>
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="order-box">
+                        <a href="../artikel/artikel.html">
+                            <img src="../../pictures/BiscoffCake1.jpg" width="200">
+                        </a>
+                        <div class="cake">
+                            <div class="details">
+                                <p>Name: Biscoff-Kuchen</p>
+                                <p>Einzelpreis: 30€</p>
+                                <label for="amount">Menge: </label>
+                                <input type="number" class="amount" value="1" min="1" step="1">
+                                <button>Aus Warenkorb entfernen</button>
+                                <p>Zusatzoptionen: Extra Biscoff-Kekse(4,00€)</p>
+                            </div>
+                            <div class="sum">
+                                <span><strong>34,00 €</strong></span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="order-box1">
                         <div id="gesamtkosten">
                             <ul class="check">
