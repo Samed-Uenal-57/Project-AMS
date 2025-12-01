@@ -27,9 +27,8 @@
 
   <main>
     <form class="form">
-      <p class="title">Lieferung</p>
+      <h2>Lieferung</h2>
       <div class="flex">
-        
         <label>
           <input required="" class="input" placeholder="" type="text">
           <span>Vorname</span>
@@ -53,13 +52,17 @@
           <span>Stadt</span>
         </label>
       </div>
-      <label>
-        <input required="" class="input" placeholder="" type="text">
-        <span>Land/Region</span>
-      </label>
-      <p class="title">Zahlung</p>
+      
+      <select name="country" id="land">
+        <option value="initial">Land</option>
+        <option value="germany">Deutschland</option>
+        <option value="switzerland">Schweiz</option>
+        <option value="austria">Österreich</option>
+      </select>
+      
+      <h2>Zahlung</h2>
       <label class="radio">
-        <input type="radio" name="zahlung" value="rechnung">
+        <input type="radio" name="zahlung" value="rechnung" checked>
         <span>Rechnung</span>
       </label>
       <label class="radio">
@@ -72,19 +75,19 @@
       </label>
     </form>
 
-    <div id="Warenkorb">
+    <div id="warenkorb">
       <div class="element">
         <img class="size" src="../../pictures/ErdbeereSchokoKuchen1.jpg">
         <div class="inner-element">
           <h4> Erdbeer-Schokokuchen</h4>
-          <p> 35 € </p>
+          <p>1x 37,50 € </p>
         </div>
       </div>
       <div class="element">
         <img class="size" src="../../pictures/BiscoffCake1.jpg">
         <div class="inner-element">
           <h4> Biscoff-Kuchen</h4>
-          <p> 30 € </p>
+          <p>1x 34,00 € </p>
         </div>
       </div>
 
@@ -96,19 +99,23 @@
           Zwischensumme - 2 Artikel
           <br>
           Versand
-          <br>
+          <br><br>
           Gesamt
+          <br>
+          enthaltene MwSt.
         </div>
         <div id="summe">
           71,50 €
           <br>
           4,50 €
-          <br>
+          <br><br>
           76,00 €
+          <br>
+          13,58 €
         </div>
       </div>
       <a href="../bestellung/bestellung.html">
-        <button class="button" id="kaufen">Jetzt Kaufen</button>
+        <button class="button">Jetzt Kaufen</button>
       </a>
     </div>
   </main>

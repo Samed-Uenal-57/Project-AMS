@@ -24,12 +24,10 @@ main{
 }
 
 #last-box{
-    
-    margin-bottom: 50px;
+    margin-bottom: 150px;
 }
 
 .line{
     display: flex;
     justify-content: space-between;
-    
 }

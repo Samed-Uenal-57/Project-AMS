@@ -12,7 +12,7 @@
 
 a {
     text-decoration: none;
-    font-weight: 350;
+
 }
 
 img {
@@ -22,14 +22,7 @@ img {
     overflow: hidden;
 }
 
-button {
-    margin: 15px;
-}
 
-.form p {
-    font-size: 40px;
-    font-weight: bolder;
-}
 
 #order h2, img {
     margin-left: 40px;
@@ -42,15 +35,16 @@ button {
     border: 2px solid black;
     border-radius: 1000000px;
     background-color: white;
-    font-size: 120%;
     width: 30px;
     height: 30px;
 }
 
-#Warenkorb {
+#warenkorb {
     background-color: #fff6f5;
     margin-top: 50px;
     padding: 25px;
+    padding-left: 10px;
+    margin-bottom: 50px;
 }
 
 .size{
@@ -63,7 +57,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px;
+    margin-left: 50px;
     max-width: 35%;
     min-width: 100px;
 }
@@ -80,15 +74,9 @@ button {
     align-items: center;
 }
 
-#kaufen {
-    margin-left: 20px;
-    min-width: 300px;
-    background-color: rgb(214, 56, 28);
-}
-
-#kaufen:hover {
-    min-width: 300px;
-    background-color: red;
+.button{
+    margin-top: 25px;
+    margin-left: 50px;
 }
 
 .form {
@@ -96,11 +84,10 @@ button {
     flex-direction: column;
     gap: 7px;
     background-color: #fff6f5;
-    padding: 20px;
-    padding-left: 70px;
-    padding-bottom: 50px;
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 30px;
     position: relative;
-    font-size: 115%;
 }
 
 .flex {
@@ -139,21 +126,18 @@ button {
     left: 10px;
     top: 15px;
     color: grey;
-    font-size: 0.9em;
     cursor: text;
     transition: 0.3s ease;
 }
 
 .form label .input:placeholder-shown+span {
     top: 15px;
-    font-size: 0.9em;
 }
 
 .form label .input:focus+span,
 .form label .input:valid+span {
     top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
+    
 }
 
 .form label .input:valid+span {
@@ -165,12 +149,24 @@ button {
     border-radius: 10px;
     gap: 10px;
     cursor: pointer;
-    border: 2px solid grey;
+    border: 2px solid lightgrey;
     padding: 15px;
+    transition: all 0.5s ease;
 }
+#land{
+    border: none;
+    border-radius: 10px;
+    max-width:550px;
+    min-height: 50px;
+    color: grey;
+    padding-left: 10px;
+    font-size: 16px;
+    
+}
+
 .element {
     display: flex;
-    padding: 5px;
+    padding-left: 10px;
     align-items: center;
     padding-bottom: 50px;
 }
@@ -184,5 +180,7 @@ button {
 .line {
     width: 40%;
     border-bottom: black solid 2px;
+    margin-left: 50px;
     margin-bottom: 50px;
+
 }
