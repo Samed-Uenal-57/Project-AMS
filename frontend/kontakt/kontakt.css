@@ -86,16 +86,6 @@ textarea{
     margin-left: 20px;
 }
 
-.submit-btn{
-    background-color: #000;
-    color:#fff;
-    font-weight: 500;
-    border:none;
-    border-radius: 6px;
-    padding: 10px 24px;
-    transition: background-color 0.5s ease, transform 0.5 ease;
-}
-
 #combine{
     display: flex;
     gap:30px;
