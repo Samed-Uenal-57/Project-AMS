@@ -32,7 +32,6 @@
     gap: 40px;
     margin-bottom: 80px;
     justify-content: space-evenly;
-    background-color: #fff9f5;
 }
 
 .feature{
@@ -48,13 +47,7 @@
     height: 50px;   
 }
 
-.button{
-    border-radius: 10px;
-    width: 250px;
-    height: 50px;
-    background-color: white;
-    font-weight: bolder;
-}
+
 
 #section-highlight{
     display: flex;
@@ -116,18 +109,9 @@
 #forbuttons{
     display:flex;
     gap: 40px;
-    
 }
 
-.red-button{
-    max-width: 250px;
-    height: 55px;
-    border-radius: 20px;
-    border: 1px white;
-    background-color: #E63946;
-    color:white;
-    font-weight: bold;
-}
+
 
 
 #section-find{
