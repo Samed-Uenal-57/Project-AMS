@@ -8,7 +8,7 @@ main {
 p {
   line-height: 1.5;
   padding: 1rem;
-  background-color: lightgray;
+  background-color: #fff9f5;
 }
 
 .about_content, .our_team {
