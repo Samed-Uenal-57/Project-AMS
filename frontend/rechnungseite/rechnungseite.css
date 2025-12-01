@@ -160,6 +160,14 @@ button {
     color: green;
 }
 
+.radio{
+    display: flex;
+    border-radius: 10px;
+    gap: 10px;
+    cursor: pointer;
+    border: 2px solid grey;
+    padding: 15px;
+}
 .element {
     display: flex;
     padding: 5px;

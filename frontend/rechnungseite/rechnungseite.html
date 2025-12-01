@@ -58,16 +58,16 @@
         <span>Land/Region</span>
       </label>
       <p class="title">Zahlung</p>
-      <label>
-        <input required="" class="input" placeholder="" type="text">
+      <label class="radio">
+        <input type="radio" name="zahlung" value="rechnung">
         <span>Rechnung</span>
       </label>
-      <label>
-        <input required="" class="input" placeholder="" type="text">
+      <label class="radio">
+        <input type="radio" name="zahlung" value="ueberweisung">
         <span>Überweisung</span>
       </label>
-      <label>
-        <input required="" class="input" placeholder="" type="radio">
+      <label class="radio">
+        <input type="radio" name="zahlung" value="paypal">
         <span>PayPal</span>
       </label>
     </form>
@@ -89,8 +89,7 @@
       </div>
 
       <div class="line"></div>
-      <button class="button" onclick="alert('Rebattcode action')">Rebattcode</button>
-      <button class="button" onclick="alert('Anwenden action')">Anwenden</button>
+      
       
       <div id="check">
         <div id="description">
