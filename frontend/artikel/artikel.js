@@ -68,12 +68,70 @@ document.addEventListener("DOMContentLoaded", () =>{
                 }
 
             });
+                
+            container.appendChild(div);
+            const basePrice = p.preis;
+            const priceElement = div.querySelector(".price");
+            const extraRadios = div.querySelectorAll("input[name='extra']");
+            const pieceInput = div.querySelector('#piece');
+
+            function updatePrice(){
+                let extra = 0;
+
+                const selected = div.querySelector("input[name='extra']:checked");
+                if (selected && selected.value === "schmetterlinge"){
+                    extra = 2.50;
+                }
+                else if(selected && selected.value === "schokoStueckchen"){
+                    extra = 1.50;
+                }
+                const quantity = Number(pieceInput.value);
+                const finalPrice = (basePrice + extra) * quantity;
+                priceElement.textContent = finalPrice.toFixed(2) + " €";
+            }
+
+            extraRadios.forEach(radio =>{
+                radio.addEventListener("change", updatePrice);
+            });
+            pieceInput.addEventListener("input", updatePrice);
         })
         .catch(err => console.error("Fehler beim Laden: ", err));
 
+
     
+
+
+    const container3 = document.getElementById("whole-img-review");
+    fetch(`http://localhost:8000/api/produkt/gib/${id}`)
+    .then(res => res.json())
+    .then(p=> {
+        const review = p.bilder.slice(1);
+        if(review.length === 0){
+            const div2 = document.createElement("div");
+            div2.className = "no-reviews";
+            div2.innerHTML = `
+                <p>Leider gibt es noch keine Kundenbilder dazu.</p>
+            `;
+            container3.appendChild(div2);
+        } else{
+            review.forEach(bild =>{
+                const bildPath = 'http://localhost:8000/' + bild.bildpfad;
+                const div2 = document.createElement("div");
+                div2.className = "customer-img-review";
+                div2.innerHTML = `
+                    <div>
+                        <img class="size" src= "${bildPath}" alt="${p.bezeichnung}">
+                    </div>        
+                `;
+                container3.appendChild(div2);
+            })    
+        }
+    })
+    .catch(err => console.error("Fehler beim Laden: ", err));
+    
+
+
     const container2 = document.getElementById("gallery");
-    
     fetch("http://localhost:8000/api/produkt/alle")
     .then(res=> res.json())
     .then(produkte => {
@@ -86,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             div1.innerHTML = `
                 <a href="../artikel/artikel.html?id=${p.id}">
                 <img src= "${bildPfad}" alt="${p.bezeichnung}">
-                <h3>${p.bezeichnung}</h3>
+                <h4>${p.bezeichnung}</h4>
                 <p>Preis: ${p.preis} € </p>
             `;
             container2.appendChild(div1)

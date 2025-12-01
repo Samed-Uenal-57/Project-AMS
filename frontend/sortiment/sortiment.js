@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () =>{
         rest.forEach(p=>{
             const div2 = document.createElement("div");
             const bildPfad = 'http://localhost:8000/' + p.bilder[0].bildpfad
-
             div2.className = "einkauf";
             div2.innerHTML = `
                 <a href="../artikel/artikel.html?id=${p.id}">
