@@ -315,3 +315,12 @@ CREATE TABLE Galerie (
 	bildpfad TEXT NOT NULL,
 	erstellzeitpunkt NUMERIC NOT NULL
 );
+-- ------------------------------
+-- Kontaktformular
+CREATE TABLE Kontaktformular (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	vorname TEXT NOT NULL,
+	name TEXT NOT NULL,
+	mail TEXT NOT NULL,
+	nachricht TEXT NOT NULL
+)

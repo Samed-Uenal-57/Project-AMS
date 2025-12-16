@@ -844,5 +844,9 @@ INSERT INTO Zutatenliste (id, gerichtId, zutatId, menge, einheitId) VALUES (30, 
 INSERT INTO Zutatenliste (id, gerichtId, zutatId, menge, einheitId) VALUES (31, 5, 19, 200, 7);
 INSERT INTO Zutatenliste (id, gerichtId, zutatId, menge, einheitId) VALUES (32, 5, 28, 500, 2);
 
+-- Kontaktformular
+INSERT INTO Kontaktformular (id, vorname, name, mail, nachricht) VALUES (1, "Samed"," Uenal", "bsp@gmail.com", "hallo welt");
+
+
 -- DISABLE FOREIGN KEYS
 PRAGMA foreign_keys = 0;

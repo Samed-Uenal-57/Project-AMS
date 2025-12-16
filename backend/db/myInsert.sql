@@ -78,3 +78,4 @@ INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (50,'produktbild/Apfels
 INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (51,'produktbild/Apfelstrudelreview2.jpg', 15);
 INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (52,'produktbild/Apfelstrudelreview3.jpg', 15);
 INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (53,'produktbild/Apfelstrudelreview4.jpg', 15);
+

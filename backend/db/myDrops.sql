@@ -1,0 +1,15 @@
+DROP TABLE Branche;
+DROP TABLE Film;
+DROP TABLE Filmgenre;
+DROP TABLE Firma;
+DROP TABLE Gericht;
+DROP TABLE Kinosaal;
+DROP TABLE Reservierer;
+DROP TABLE ReservierterSitz;
+DROP TABLE Reservierung;
+DROP TABLE Speisenart;
+DROP TABLE Termin;
+DROP TABLE Vorstellung;
+DROP TABLE Zutat;
+DROP TABLE Zutatenliste ;
+DROP TABLE Download;
