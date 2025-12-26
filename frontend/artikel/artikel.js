@@ -1,3 +1,4 @@
+//Sterne für die Bewertung
 function Stars(value){
     let stars = '';
     let i = 1;
@@ -105,8 +106,8 @@ document.addEventListener("DOMContentLoaded", () =>{
                 radio.addEventListener("change", updatePrice);
             });
             pieceInput.addEventListener("input", updatePrice);
-        })
-        .catch(err => console.error("Fehler beim Laden: ", err));
+    })
+    .catch(err => console.error("Fehler beim Laden: ", err));
 
 
     
@@ -139,7 +140,54 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
     })
     .catch(err => console.error("Fehler beim Laden: ", err));
-    
+    //Sternangabe
+    const input = document.querySelector("#points");
+    const starPreview = document.querySelector(".stars");
+    let rating = Number(input.value);
+    starPreview.textContent = Stars(rating);
+    input.addEventListener("input", (event) =>{
+        rating = Number(event.target.value);
+        starPreview.textContent = Stars(rating);
+    })
+
+    //Rezension an Datenbank senden
+    const form = document.querySelector(".form");
+    form.addEventListener("submit", async function(event) {
+        event.preventDefault();
+        const form_data = new FormData(this);
+        
+        const data = {
+            product: {id: Number(id)},
+            vorname: form_data.get('vorname'),
+            name: form_data.get('nachname'),
+            bewertung: rating,
+            rezension: form_data.get('rezension')
+        };
+
+        try{
+            const response = await fetch('http://localhost:8000/api/bewertung',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)           
+            });
+            const result = await response.json();
+            if(response.ok){
+                alert('Rezension abgeschickt!');
+                this.reset();
+            } else{
+                alert('Fehler beim Senden: ' + result.nachricht);
+            }
+        } catch(error){
+            console.error('Netzwerkfehler: ', error);
+            alert('Netzwerkfehler beim Senden der Nachricht');
+        }
+        
+    });
+
+
+    //Bewertungen
     const container4 = document.getElementById("reviewcontainer");
     fetch(`http://localhost:8000/api/bewertung/produkt/${id}`)
     .then(res => res.json())
@@ -164,7 +212,10 @@ document.addEventListener("DOMContentLoaded", () =>{
         });
 
     });
+    //Bewertung in Datenbank speichern
 
+
+    //Andere Produkte anzeigen
     const container2 = document.getElementById("gallery");
     fetch("http://localhost:8000/api/produkt/alle")
     .then(res=> res.json())

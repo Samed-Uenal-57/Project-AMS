@@ -4,7 +4,7 @@
     display: flex;
     gap: 60px;
     justify-content: center;
-    margin: 60px auto;
+    margin: 50px auto;
     padding: 40px;
     flex-wrap: wrap;
     background-color: #fff9f5;
@@ -109,6 +109,7 @@ button {
 #reviewcontainer{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap:30px;
     
     margin-left: 50px;
@@ -118,6 +119,59 @@ button {
 .stars{
     color: rgb(214, 56, 28);
     font-size: 28px;
+}
+
+/*Erstelle Rezension*/
+
+#create-review{
+    margin-top: 20px;
+    background-color: #fff9f5;
+}
+#contact-form{
+   margin-bottom: 50px;
+}
+
+
+.form{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+    max-width: 700px;
+}
+
+#credentials{
+    display: flex;
+    gap: 25px;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+label{
+    margin-bottom: 5px;
+    color:#222;
+}
+
+input, textarea{
+    padding: 10px 12px;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    background-color: #fafafa;
+    transition: all 0.5s ease;
+}
+
+input:focus,textarea:focus{
+    border-color: #222;
+    background-color: rgb(231, 228, 228);
+    outline: none;
+}
+
+textarea{
+    resize: none;
 }
 
 /*Andere Produkte*/

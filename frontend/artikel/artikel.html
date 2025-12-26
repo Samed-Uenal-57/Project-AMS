@@ -38,6 +38,38 @@
                 </div>
                 
             </section>
+            <section id="create-review">
+
+                <form class="form">
+                    <h3>Schreiben Sie Ihre eigene Rezension</h3>
+                    <div id="credentials">
+                        <div class="field">
+                            <label for="vorname">Vorname</label>
+                            <input type="text" id="vorname" name="vorname" placeholder="Vorname" required>   
+                        </div>
+                        <div class="field">
+                            <label for="nachname">Nachname</label>      
+                            <input type="text" id="nachname" name="nachname" placeholder="Nachname" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="sterne">Bewertung (von 1 bis 5):</label>      
+                        <input type="range" id="points" name="sterne" min="1" max="5" value="1" required>
+                        <p>Sterne:</p>
+                        <div class="stars">
+                        </div>
+                    </div>
+                    <div id="combine">
+                        <div class="field">
+                            <label for="rezension">Deine Rezension</label>     
+                            <textarea id="rezension" name="rezension" rows="5" placeholder="Bitte schreibe deine Nachricht..." required></textarea>
+                        </div>
+                        <div id="button-container">
+                            <button type="submit" class="submit-btn">Verschicken</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
             <section id="relatedproducts">
                 <h2>Andere Produkte:</h2>
                 <div id="gallery"></div>
