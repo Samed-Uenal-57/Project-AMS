@@ -79,3 +79,67 @@ INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (51,'produktbild/Apfels
 INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (52,'produktbild/Apfelstrudelreview3.jpg', 15);
 INSERT INTO Produktbild (id, bildpfad, produktId) VALUES (53,'produktbild/Apfelstrudelreview4.jpg', 15);
 
+INSERT INTO Bewertung(id, productid, vorname, name, bewertung, rezension) VALUES (1,1,"Samed", "Uenal", 4, "Sehr leckerer Kuchen. Empfehle ich für jeden!");
+INSERT INTO Bewertung (productid, vorname, name, bewertung, rezension) VALUES 
+(1, 'Bedirhan', 'Uenal', 5, 'Sehr leckerer Kuchen, frisch und saftig.'),
+(1, 'Anna', 'Müller', 4, 'Geschmacklich sehr gut, etwas süß.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 2, 'Max', 'Schneider', 5, 'Perfekt zum Kaffee, sehr zu empfehlen.'),
+(NULL, 2, 'Abdullah', 'Uenal', 3, 'Ganz okay, hätte saftiger sein können.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 3, 'Tom', 'Weber', 4, 'Gute Qualität, schmeckt frisch.'),
+(NULL, 3, 'Nina', 'Becker', 5, 'Einer der besten Kuchen hier!');
+
+INSERT INTO Bewertung VALUES
+(NULL, 4, 'Paul', 'Hoffmann', 2, 'Leider nicht mein Geschmack.'),
+(NULL, 4, 'Lena', 'Koch', 4, 'Besser als erwartet, gerne wieder.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 5, 'Jan', 'Richter', 5, 'Super lecker und sehr frisch.'),
+(NULL, 5, 'Marie', 'Wolf', 4, 'Sehr gut, aber etwas teuer.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 6, 'Chris', 'Neumann', 3, 'Solide Qualität, nichts Besonderes.'),
+(NULL, 6, 'Julia', 'Schulz', 5, 'Absolut empfehlenswert!');
+
+INSERT INTO Bewertung VALUES
+(NULL, 7, 'David', 'Krüger', 4, 'Schmeckt sehr gut.'),
+(NULL, 7, 'Sarah', 'Brandt', 5, 'Mega lecker, kaufe ich wieder.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 8, 'Felix', 'Lang', 3, 'Okay, aber nicht überragend.'),
+(NULL, 8, 'Miriam', 'Schwarz', 4, 'Ganz lecker, gute Konsistenz.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 9, 'Kevin', 'Maier', 5, 'Top Produkt, sehr zufrieden.'),
+(NULL, 9, 'Sophie', 'Klein', 4, 'Guter Geschmack, schnelle Lieferung.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 10, 'Leon', 'Hartmann', 2, 'Nicht mein Fall.'),
+(NULL, 10, 'Eva', 'Zimmermann', 4, 'Schmeckt gut, würde ich wieder kaufen.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 11, 'Moritz', 'Jung', 5, 'Richtig lecker, sehr frisch.'),
+(NULL, 11, 'Clara', 'Bauer', 5, 'Mein Lieblingsprodukt!');
+
+INSERT INTO Bewertung VALUES
+(NULL, 12, 'Tim', 'Lorenz', 3, 'In Ordnung, aber nichts Besonderes.'),
+(NULL, 12, 'Isabel', 'Seidel', 4, 'Ganz gut, empfehlenswert.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 13, 'Daniel', 'Graf', 5, 'Super Geschmack, top Qualität.'),
+(NULL, 13, 'Kathrin', 'Peters', 4, 'Sehr lecker, nur leicht trocken.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 14, 'Robin', 'Arnold', 3, 'Durchschnittlich.'),
+(NULL, 14, 'Vanessa', 'Kuhn', 4, 'Ganz gut, würde ich empfehlen.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 15, 'Marco', 'Vogel', 5, 'Extrem lecker, perfekte Süße.'),
+(NULL, 15, 'Alina', 'Kramer', 4, 'Sehr gut, kleine Abzüge.');
+
+INSERT INTO Bewertung VALUES
+(NULL, 16, 'Jonas', 'Brand', 5, 'Fantastisch, sehr zu empfehlen.'),
+(NULL, 16, 'Emily', 'Otto', 4, 'Sehr lecker, gute Qualität.');

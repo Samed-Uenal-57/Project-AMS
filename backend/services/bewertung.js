@@ -33,7 +33,7 @@ serviceRouter.get('/bewertung/alle', function(request, response) {
     }
 });
 
-serviceRouter.get('/bewertung/gericht/:id', function(request, response) {
+serviceRouter.get('/bewertung/produkt/:id', function(request, response) {
     console.log('Service Bewertung: Client requested all records for parent, id=' + request.params.id);
 
     const bewertungDao = new BewertungDao(request.app.locals.dbConnection);
@@ -65,10 +65,11 @@ serviceRouter.post('/bewertung', function(request, response) {
     console.log('Service Bewertung: Client requested creation of new record');
 
     var errorMsgs=[];
+    /*
     if (helper.isUndefined(request.body.gericht)) {
-        errorMsgs.push('gericht fehlt');
+        errorMsgs.push('produkt fehlt');
     } else if (helper.isUndefined(request.body.gericht.id)) {
-        errorMsgs.push('gericht gesetzt, aber id fehlt');
+        errorMsgs.push('produkt gesetzt, aber id fehlt');
     }        
     if (helper.isUndefined(request.body.punkte)) {
         errorMsgs.push('punkte fehlen');
@@ -77,27 +78,10 @@ serviceRouter.post('/bewertung', function(request, response) {
     } else if (request.body.punkte <= 0) {
         errorMsgs.push('punkte müssen eine zahl > 0 sein');
     }
-    if (helper.isUndefined(request.body.zeitpunkt)) {
-        request.body.zeitpunkt = helper.getNow();
-    } else if (!helper.isGermanDateTimeFormat(request.body.zeitpunkt)) {
-        errorMsgs.push('zeitpunkt hat das falsche Format, erlaubt: dd.mm.jjjj hh:mm:ss');
-    } else {
-        request.body.zeitpunkt = helper.parseGermanDateTimeString(request.body.zeitpunkt);
-    }
-    if (helper.isUndefined(request.body.bemerkung)) 
-        request.body.bemerkung = null;
-    if (helper.isUndefined(request.body.ersteller)) 
-        request.body.ersteller = null;
-    
-    if (errorMsgs.length > 0) {
-        console.log('Service Bewertung: Creation not possible, data missing');
-        response.status(400).json({ 'fehler': true, 'nachricht': 'Funktion nicht möglich. Fehlende Daten: ' + helper.concatArray(errorMsgs) });
-        return;
-    }
-
+    */
     const bewertungDao = new BewertungDao(request.app.locals.dbConnection);
     try {
-        var obj = bewertungDao.create(request.body.gericht.id, request.body.punkte, request.body.zeitpunkt, request.body.bemerkung, request.body.ersteller);
+        var obj = bewertungDao.create(request.body.product.id, request.body.vorname, request.body.name, request.body.bewertung, request.body.rezension);
         console.log('Service Bewertung: Record inserted');
         response.status(200).json(obj);
     } catch (ex) {

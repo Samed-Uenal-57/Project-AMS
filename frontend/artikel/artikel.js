@@ -1,3 +1,12 @@
+function Stars(value){
+    let stars = '';
+    let i = 1;
+    for(i; i <= 5; i++){
+        stars += i <= value ? '★' : '☆';
+    }
+    return stars;
+}
+
 document.addEventListener("DOMContentLoaded", () =>{
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
@@ -131,7 +140,30 @@ document.addEventListener("DOMContentLoaded", () =>{
     })
     .catch(err => console.error("Fehler beim Laden: ", err));
     
+    const container4 = document.getElementById("reviewcontainer");
+    fetch(`http://localhost:8000/api/bewertung/produkt/${id}`)
+    .then(res => res.json())
+    .then(bewertung => {
+        if(bewertung.length === 0){
+            container4.innerHTML =`
+                <p> Es gibt noch keine Bewertungen! </p>
+            `;
+            return;
+        }
+        bewertung.forEach(b => {
+            console.log(b.vorname, b.name, b.bewertung, b.rezension);
+            const div3 = document.createElement("div");
+            div3.className = "customer-review";
+            div3.innerHTML = `
+                <p>${b.vorname} , ${b.name}</p>
+                <p class="stars">${Stars(b.bewertung)}</p>
+                <p>Rezension:<br> ${b.rezension}</p>
+            
+            `;
+            container4.appendChild(div3);
+        });
 
+    });
 
     const container2 = document.getElementById("gallery");
     fetch("http://localhost:8000/api/produkt/alle")

@@ -61,9 +61,7 @@ button {
     margin-top: 20px;
 }
 
-.button:hover {
-  background-color: #E63946;
-}
+
 
 /*Kundenbilder*/
 
@@ -118,11 +116,9 @@ button {
     min-height: 200px;
 }
 
-#review-img{
-    max-width: 300px;
-    width: 100%;
-    height:auto;
-    border-radius: 12px;
+.stars{
+    color: rgb(214, 56, 28);
+    font-size: 28px;
 }
 
 /*Andere Produkte*/

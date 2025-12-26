@@ -324,3 +324,14 @@ CREATE TABLE Kontaktformular (
 	mail TEXT NOT NULL,
 	nachricht TEXT NOT NULL
 )
+-----------------------------------
+-- Meine Bewertung
+CREATE TABLE Bewertung(
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	productid INTEGER NOT NULL,
+	vorname TEXT NOT NULL, 
+	name TEXT NOT NULL,
+	bewertung INTEGER NOT NULL CHECK (bewertung BETWEEN 1 AND 5),
+	rezension TEXT NOT NULL,
+	CONSTRAINT fk_Bewertung1 FOREIGN KEY (productid) REFERENCES Produkt(id)
+)

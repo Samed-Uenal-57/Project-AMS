@@ -18,11 +18,8 @@ class BewertungDao {
         if (helper.isUndefined(result)) 
             throw new Error('No Record found by id=' + id);
 
-        result.gericht = { id: result.gerichtId };
-        delete result.gerichtId;
-
-        result.zeitpunkt = helper.formatToGermanDateTime(helper.parseSQLDateTimeString(result.zeitpunkt));
-
+        result.product = { id: result.productid };
+        delete result.productid;
         return result;
     }
 
@@ -35,17 +32,15 @@ class BewertungDao {
             return [];
 
         for (var i = 0; i < result.length; i++) {
-            result[i].gericht = { id: result[i].gerichtId };
-            delete result[i].gerichtId;
-
-            result[i].zeitpunkt = helper.formatToGermanDateTime(helper.parseSQLDateTimeString(result[i].zeitpunkt));
+            result[i].product = { id: result[i].productid };
+            delete result[i].productid;
         }
 
         return result;
     }
 
     loadAllByParent(id) {
-        var sql = 'SELECT * FROM Bewertung WHERE gerichtId=?';
+        var sql = 'SELECT * FROM Bewertung WHERE productid=?';
         var statement = this._conn.prepare(sql);
         var result = statement.all(id);
 
@@ -53,10 +48,8 @@ class BewertungDao {
             return [];
 
         for (var i = 0; i < result.length; i++) {
-            result[i].gericht = { id: result[i].gerichtId };
-            delete result[i].gerichtId;
-
-            result[i].zeitpunkt = helper.formatToGermanDateTime(helper.parseSQLDateTimeString(result[i].zeitpunkt));
+            result[i].product = { id: result[i].productid };
+            delete result[i].productid;
         }
 
         return result;
@@ -73,13 +66,10 @@ class BewertungDao {
         return false;
     }
 
-    create(gerichtId = 1, punkte = 1, zeitpunkt = null, bemerkung = null, ersteller = null) {
-        if (helper.isNull(zeitpunkt)) 
-            zeitpunkt = helper.getNow();
-
-        var sql = 'INSERT INTO Bewertung (gerichtId,punkte,zeitpunkt,bemerkung,ersteller) VALUES (?,?,?,?,?)';
+    create(productid = 1, vorname = '', name = '', bewertung = null, rezension = '') {
+        var sql = 'INSERT INTO Bewertung (productid,vorname,name,bewertung,rezension) VALUES (?,?,?,?,?)';
         var statement = this._conn.prepare(sql);
-        var params = [gerichtId, punkte, helper.formatToSQLDateTime(zeitpunkt), bemerkung, ersteller];
+        var params = [productid, vorname, name, bewertung, rezension];
         var result = statement.run(params);
 
         if (result.changes != 1) 
