@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () =>{
-    const container = document.getElementById("order-boxes");
+    
+    const container = document.getElementById("whole-boxes");
 
     //console.log({container})
 
@@ -23,16 +24,20 @@ document.addEventListener("DOMContentLoaded", () =>{
                 const div = document.createElement("div");
                 div.className = "order-box";
                 div.innerHTML = `
-                    <a href="../artikel/artikel.html?id=${product.id}">
-                        <img src= "${bildPath}" alt="${p.bezeichnung}">
-                    </a>
+                    <div id= "img">
+                        <a href="../artikel/artikel.html?id=${product.id}">
+                            <img src= "${bildPath}" alt="${p.bezeichnung}">
+                        </a>
+                    </div>
                     <div class="cake">
-                        <p>Name: ${p.bezeichnung}</p>
-                        <p>Kosten: ${p.preis} €</p>
-                        <label for="amount">Menge: </label>
-                        <input type="number" class="amount" min="1" value="${product.piece}">
-                        <button class="delete-btn"> Aus Warenkorb entfernen</button>
-                        <p>Zusatz: ${extra}</p>
+                        <div class="details">
+                            <p>Name: ${p.bezeichnung}</p>
+                            <p>Einzelpreis: ${p.preis} €</p>
+                            <label for="amount">Menge: </label>
+                            <input type="number" class="amount" min="1" value="${product.piece}">
+                            <button class="delete-btn"> Aus Warenkorb entfernen</button>
+                            <p>Zusatz: ${product.extra}</p>
+                        </div>
                         
                     </div>
                 `;
@@ -49,10 +54,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 
                     localStorage.setItem("cart", JSON.stringify(savedCart));
                     div.remove();
-
-                
-                    
-    
                 });
 
 

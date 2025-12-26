@@ -40,6 +40,7 @@ p{
     margin-top:50px;
     margin-left:50px;
     display: flex;
+    flex-direction: row;
     flex:1;
     
 }
