@@ -111,7 +111,6 @@ button {
     flex-direction: row;
     gap:30px;
     
-    border-radius: 10px;
     margin-left: 50px;
     min-height: 200px;
 }
