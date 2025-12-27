@@ -12,9 +12,12 @@ document.addEventListener("DOMContentLoaded", () =>{
     cart.products.forEach((product, index) => {
         //console.log({product})
         id = product.id
-        var extra;
+        let extra = 0;
+        
         if(product.extra === "schmetterlinge"){
-
+            extra += 2.50;
+        }else{
+            extra += 1.50;
         }
     
         fetch(`http://localhost:8000/api/produkt/gib/${id}`)
@@ -38,11 +41,27 @@ document.addEventListener("DOMContentLoaded", () =>{
                             <button class="delete-btn"> Aus Warenkorb entfernen</button>
                             <p>Zusatz: ${product.extra}</p>
                         </div>
+                        <div class="sum">
                         
+                        </div>
                     </div>
+                    
                 `;
                 container.appendChild(div);
+                const amountInput = div.querySelector(".amount");
+                const priceElement = div.querySelector(".sum");
+                
+                function updatePrice(){
+                    const basePrice = p.preis;
+                    const amount = Number(amountInput.value);
 
+                    const finalPrice = (basePrice + extra) * amount;
+                    priceElement.textContent = finalPrice.toFixed(2) + " €";
+                    fullPrice();
+                }
+                amountInput.addEventListener("input", updatePrice);
+                updatePrice();
+                
                 const deleteBtn = div.querySelector(".delete-btn");
                 deleteBtn.addEventListener('click', (event) => {
                     event.preventDefault();
@@ -54,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
                     localStorage.setItem("cart", JSON.stringify(savedCart));
                     div.remove();
+                    fullPrice();
                 });
 
 
@@ -61,5 +81,20 @@ document.addEventListener("DOMContentLoaded", () =>{
             .catch(err => console.error("Fehler beim Laden: ", err));
     
     });
+    
+    
+    function fullPrice(){
+        let totalsum = 0;
 
+        document.querySelectorAll(".sum").forEach(sumProduct => {
+            const value = parseFloat( sumProduct.textContent.replace("€", "").trim());
+            if(!isNaN(value)){
+                totalsum += value;
+            }
+        });
+        document.querySelector("#totalPrice").textContent = totalsum.toFixed(2) + " €";
+        const mwst = totalsum * 0.19;
+        document.querySelector("#mwst").textContent = mwst.toFixed(2) + " €";
+    }
+    fullPrice();
 });

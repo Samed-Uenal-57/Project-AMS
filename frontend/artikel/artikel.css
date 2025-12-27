@@ -110,7 +110,7 @@ button {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap:30px;
+    gap:20px;
     
     margin-left: 50px;
     min-height: 200px;
@@ -120,7 +120,12 @@ button {
     color: rgb(214, 56, 28);
     font-size: 28px;
 }
-
+.customer-review{
+    border:1px solid rgb(199, 197, 197);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 300px;
+}
 /*Erstelle Rezension*/
 
 #create-review{

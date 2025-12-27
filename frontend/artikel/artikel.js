@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                         <label for="check">Keine</label><br>
                         <input type="radio" id="extra2" name="extra" value="schmetterlinge">
                         <label for="check">Schmetterlinge (essbar, + 2,50 €)</label><br>
-                        <input type="radio" id="extra3" name="extra" value="schokoStueckchen">
+                        <input type="radio" id="extra3" name="extra" value="Schoko-Stueckchen">
                         <label for="check">Schoko-Stückchen (+ 1,50 €)</label><br>
                         <label for="piece">Stückzahl:</label>
                         <input type="number" id="piece" name="piece" value="1" min="1" step="1"> <br>
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                 if (selected && selected.value === "schmetterlinge"){
                     extra = 2.50;
                 }
-                else if(selected && selected.value === "schokoStueckchen"){
+                else if(selected && selected.value === "Schoko-Stueckchen"){
                     extra = 1.50;
                 }
                 const quantity = Number(pieceInput.value);
