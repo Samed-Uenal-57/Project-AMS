@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="rechnungseite.css">
   <link rel="stylesheet" type="text/css" href="../general.css">
+  <script src="rechnungseite.js"></script>
   <title>Rechnungseite</title>
 </head>
 
@@ -75,44 +76,28 @@
     </form>
 
     <div id="warenkorb">
-      <div class="element">
-        <img class="size" src="../../pictures/ErdbeereSchokoKuchen1.jpg">
-        <div class="inner-element">
-          <h4> Erdbeer-Schokokuchen</h4>
-          <p>1x 37,50 € </p>
-        </div>
-      </div>
-      <div class="element">
-        <img class="size" src="../../pictures/BiscoffCake1.jpg">
-        <div class="inner-element">
-          <h4> Biscoff-Kuchen</h4>
-          <p>1x 34,00 € </p>
-        </div>
-      </div>
+      
 
       <div class="line"></div>
       
-      
-      <div id="check">
-        <div id="description">
-          Zwischensumme - 2 Artikel
-          <br>
-          Versand
-          <br><br>
-          Gesamt
-          <br>
-          enthaltene MwSt.
-        </div>
-        <div id="summe">
-          71,50 €
-          <br>
-          4,50 €
-          <br><br>
-          76,00 €
-          <br>
-          13,58 €
-        </div>
+    </div>
+    <div id="check">
+      <div id="description">
+        Zwischensumme
+        <br>
+        Versand
+        <br><br>
+        Gesamt
+        <br>
+        enthaltene MwSt.
       </div>
+      <div id="summe">
+        <span id="subtotal">0,00 €</span>
+        <span id="shipping">0,00 €</span><br>
+        <span id="total">0,00 €</span>
+        <span id="mwst">0,00 €</span>
+      </div>
+    </div>
       <a href="../bestellung/bestellung.html">
         <button class="button">Jetzt Kaufen</button>
       </a>

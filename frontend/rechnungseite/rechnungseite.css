@@ -70,13 +70,15 @@ img {
 
 #summe {
     display: flex;
-    justify-content: flex-end;
+    
     align-items: center;
+    flex-direction: column;
 }
 
 .button{
     margin-top: 25px;
     margin-left: 50px;
+    margin-bottom: 50px;
 }
 
 .form {

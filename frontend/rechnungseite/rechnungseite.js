@@ -1,65 +1,50 @@
+document.addEventListener("DOMContentLoaded", () =>{
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  if(!cart || !cart.products.length) return;
+  
+  const container = document.getElementById("warenkorb");
 
+  let subtotal = 0;
 
-/* 
+  cart.products.forEach(product =>{
+    fetch(`http://localhost:8000/api/produkt/gib/${product.id}`)
+    .then(res => res.json())
+    .then(p =>{
+      
+      let extra = 0;
 
-//document.addEventListener('DOMContentLoaded', () => {
+      if(product.extra === "schmetterlinge"){
+        extra += 2.5;
+      }
+      else{
+        extra += 1.5;
+      }
+      const price = (p.preis + Number(extra)) * Number(product.piece);
+      subtotal += price;
 
-// Исходные данные, которые «получаем» откуда-то (API/сервер)
-  const products = ["Молоко", "Хлеб", "Яблоки"];
-
-  const fields = document.getElementById('fields');
-  const addBtn = document.getElementById('add');
-  const form = document.getElementById('form-products');
-
-  const escapeHTML = s => String(s).replace(/[&<>"']/g, m => ({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-  }[m]));
-
-  function render() {
-    fields.innerHTML = '';
-    products.forEach((val, i) => {
-      const row = document.createElement('div');
-      row.style.display = 'flex';
-      row.style.gap = '6px';
-      row.style.marginBottom = '6px';
-
-      // name="products[]" — удобно для бэка: придёт массив
-      row.innerHTML = `
-        <input type="text" name="products[]" value="${escapeHTML(val)}" style="flex:1;"/>
-        <button type="button" data-i="${i}" aria-label="Удалить">×</button>
+      const div = document.createElement("div");
+      const bildPath = "http://localhost:8000/" + p.bilder[0].bildpfad 
+      div.className = "element";
+      div.innerHTML = `
+        <img class="size" src=${bildPath} alt="Bild vom bestellten Kuchen">
+        <div class="inner-element">
+          <h4>${p.bezeichnung}</h4>
+          <p>${product.piece}x ${price.toFixed(2)} €</p>
+        </div>
       `;
+      container.appendChild(div);
 
-      // обновляем массив при вводе
-      row.querySelector('input').addEventListener('input', (e) => {
-        products[i] = e.target.value;
-      });
-
-      // удаляем элемент
-      row.querySelector('button').addEventListener('click', (e) => {
-        const idx = +e.currentTarget.dataset.i;
-        products.splice(idx, 1);
-        render();
-      });
-
-      fields.appendChild(row);
+      updateSummary(subtotal);
     });
+  });
+  function updateSummary(subtotal){
+    const shipping = 4.5;
+    const total = subtotal + shipping;
+    const mwst = total * 0.19;
+
+    document.getElementById("subtotal").textContent = subtotal.toFixed(2) + " €";
+    document.getElementById("shipping").textContent = shipping.toFixed(2) + " €";
+    document.getElementById("total").textContent = total.toFixed(2) + " €";
+    document.getElementById("mwst").textContent = mwst.toFixed(2) + " €";
   }
-
-  addBtn.addEventListener('click', () => {
-    products.push('');
-    render();
-  });
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Здесь форма отправится как products[]=...&products[]=...
-    // Для демонстрации:
-    alert('Что уйдёт на бэк:\n' + JSON.stringify(products, null, 2));
-  });
-
-  render();
-
-//});
-
-
- */
+});

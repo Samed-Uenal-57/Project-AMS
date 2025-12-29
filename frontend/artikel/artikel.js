@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             const div3 = document.createElement("div");
             div3.className = "customer-review";
             div3.innerHTML = `
-                <p>${b.vorname} , ${b.name}</p>
+                <p class="name">${b.vorname}  ${b.name}</p>
                 <p class="stars">${Stars(b.bewertung)}</p>
                 <p>Rezension:<br> ${b.rezension}</p>
             

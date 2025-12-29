@@ -115,7 +115,9 @@ button {
     margin-left: 50px;
     min-height: 200px;
 }
-
+.name{
+    border-bottom: 1px solid black;
+}
 .stars{
     color: rgb(214, 56, 28);
     font-size: 28px;
