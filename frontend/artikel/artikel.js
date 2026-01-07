@@ -1,3 +1,4 @@
+import {formatPrice} from "../pricechange.js";
 //Sterne für die Bewertung
 function Stars(value){
     let stars = '';
@@ -28,13 +29,13 @@ document.addEventListener("DOMContentLoaded", () =>{
                     </div>
                     <div id="description">
                         <h2>${p.bezeichnung}</h2>
-                        <p class=price>${p.preis} € </p>
+                        <p class=price>${formatPrice(p.preis)} </p>
                         <p>${p.beschreibung}</p>
                         <label for="extra">Zusatzoptionen:</label>
                         <br>
                         <input type="radio" id="extra1" name="extra" value="keine" checked>
                         <label for="check">Keine</label><br>
-                        <input type="radio" id="extra2" name="extra" value="schmetterlinge">
+                        <input type="radio" id="extra2" name="extra" value="Schmetterlinge">
                         <label for="check">Schmetterlinge (essbar, + 2,50 €)</label><br>
                         <input type="radio" id="extra3" name="extra" value="Schoko-Stueckchen">
                         <label for="check">Schoko-Stückchen (+ 1,50 €)</label><br>
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             });
                 
             container.appendChild(div);
-            const basePrice = p.preis;
+            const basePrice = Number(p.preis);
             const priceElement = div.querySelector(".price");
             const extraRadios = div.querySelectorAll("input[name='extra']");
             const pieceInput = div.querySelector('#piece');
@@ -91,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                 let extra = 0;
 
                 const selected = div.querySelector("input[name='extra']:checked");
-                if (selected && selected.value === "schmetterlinge"){
+                if (selected && selected.value === "Schmetterlinge"){
                     extra = 2.50;
                 }
                 else if(selected && selected.value === "Schoko-Stueckchen"){
@@ -99,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                 }
                 const quantity = Number(pieceInput.value);
                 const finalPrice = (basePrice + extra) * quantity;
-                priceElement.textContent = finalPrice.toFixed(2) + " €";
+                priceElement.textContent = formatPrice(finalPrice);
             }
 
             extraRadios.forEach(radio =>{
@@ -230,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                 <a href="../artikel/artikel.html?id=${p.id}">
                 <img src= "${bildPfad}" alt="${p.bezeichnung}">
                 <h4>${p.bezeichnung}</h4>
-                <p>Preis: ${p.preis} € </p>
+                <p>Preis: ${formatPrice(p.preis)} </p>
             `;
             container2.appendChild(div1)
         })

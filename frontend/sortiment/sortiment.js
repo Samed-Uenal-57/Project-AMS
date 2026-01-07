@@ -1,3 +1,4 @@
+import {formatPrice} from "../pricechange.js";
 
 document.addEventListener("DOMContentLoaded", () =>{
     const container = document.getElementById("produkte-container");
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                 <a href="../artikel/artikel.html?id=${p.id}">
                 <img src= "${bildPfad}" alt="${p.bezeichnung}">
                 <h4>${p.bezeichnung}</h4>
-                <p class=price>${p.preis} € </p>
+                <p class=price>${formatPrice(p.preis)} </p>
                 <p>${p.beschreibung}</p>
             `;
             container.appendChild(div);
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                 <a href="../artikel/artikel.html?id=${p.id}">
                 <img src= "${bildPfad}" alt="${p.bezeichnung}">
                 <h4>${p.bezeichnung}</h4>
-                <p class=price>${p.preis} € </p>
+                <p class=price>${formatPrice(p.preis)} </p>
                 <p>${p.beschreibung}</p>
             `;
             container2.appendChild(div2);

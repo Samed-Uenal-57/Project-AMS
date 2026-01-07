@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         id = product.id
         let extra = 0;
         
-        if(product.extra === "schmetterlinge"){
+        if(product.extra === "Schmetterlinge"){
             extra += 2.50;
         }else{
             extra += 1.50;
