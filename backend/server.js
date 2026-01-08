@@ -29,7 +29,7 @@ try {
     // create server
     const HTTP_PORT = 8000;
     const express = require('express');
-    const fileUpload = require('express-fileupload');
+   
     const cors = require('cors');
     const bodyParser = require('body-parser');
     const morgan = require('morgan');
@@ -45,12 +45,7 @@ try {
     // setting folder for static files like images, pdfs aso
     app.use(express.static(__dirname + '/public'));
     // defining file upload limit
-    app.use(fileUpload({
-        createParentPath: true,
-        limits: {
-            fileSize: 2 * 1024 * 1024 * 1024        // limit to 2MB
-        }
-    }));
+    
     app.use(cors());
     app.use(bodyParser.urlencoded({ extended: true}));
     app.use(bodyParser.json());
@@ -67,22 +62,22 @@ try {
     const TOPLEVELPATH = '/api';
     console.log('Binding enpoints, top level Path at ' + TOPLEVELPATH);
     
-    var serviceRouter = require('./services/land.js');
+    
+
+    
+
+   
+
+    var serviceRouter = require('./services/produktkategorie.js');
+    app.use(TOPLEVELPATH, serviceRouter);
+
+    serviceRouter = require('./services/zahlungsart.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
     serviceRouter = require('./services/adresse.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
-    serviceRouter = require('./services/person.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-
-    serviceRouter = require('./services/download.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-
-    serviceRouter = require('./services/produktkategorie.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-
-    serviceRouter = require('./services/zahlungsart.js');
+    serviceRouter = require('./services/bestellung.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
     serviceRouter = require('./services/mehrwertsteuer.js');
@@ -93,44 +88,27 @@ try {
 
     serviceRouter = require('./services/produkt.js');
     app.use(TOPLEVELPATH, serviceRouter);
-
-
-    serviceRouter = require('./services/bestellung.js');
+    /*
+    serviceRouter = require('./services/land.js');
     app.use(TOPLEVELPATH, serviceRouter);
-
-    serviceRouter = require('./services/einheit.js');
+    
+    
+    serviceRouter = require('./services/benutzerrolle.js');
     app.use(TOPLEVELPATH, serviceRouter);
-
+    serviceRouter = require('./services/benutzer.js');
+    app.use(TOPLEVELPATH, serviceRouter);
+    serviceRouter = require('./services/person.js');
+    app.use(TOPLEVELPATH, serviceRouter);
+    */
     serviceRouter = require('./services/bewertung.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
-    serviceRouter = require('./services/benutzerrolle.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-
-    serviceRouter = require('./services/forumsbenutzer.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-
-    serviceRouter = require('./services/forumsbereich.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-
-    serviceRouter = require('./services/benutzer.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-
-    serviceRouter = require('./services/token.js');
-    app.use(TOPLEVELPATH, serviceRouter);
+    
 
     serviceRouter = require('./services/kontaktformular.js');
     app.use(TOPLEVELPATH, serviceRouter);
     
-    serviceRouter = require('./services/galerie.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-
-
-    serviceRouter = require('./services/dateiuploadeinzeln.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-
-    serviceRouter = require('./services/dateiuploadmehrere.js');
-    app.use(TOPLEVELPATH, serviceRouter);
+    
 
 
     

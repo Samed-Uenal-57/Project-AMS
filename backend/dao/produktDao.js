@@ -1,7 +1,6 @@
 const helper = require('../helper.js');
 const ProduktkategorieDao = require('./produktkategorieDao.js');
 const MehrwertsteuerDao = require('./mehrwertsteuerDao.js');
-const DownloadDao = require('./downloadDao.js');
 const ProduktbildDao = require('./produktbildDao.js');
 
 class ProduktDao {
@@ -17,7 +16,7 @@ class ProduktDao {
     loadById(id) {
         const produktkategorieDao = new ProduktkategorieDao(this._conn);
         const mehrwertsteuerDao = new MehrwertsteuerDao(this._conn);
-        const downloadDao = new DownloadDao(this._conn);
+        
         const produktbildDao = new ProduktbildDao(this._conn);
 
         var sql = 'SELECT * FROM Produkt WHERE id=?';
@@ -38,7 +37,7 @@ class ProduktDao {
         }
         delete result.datenblattId;
         result.bilder = produktbildDao.loadByParent(result.id);
-
+        /*
         if (result.prozente > 0) {
             result.rabatt = helper.round(result.prozente * (result.preis / 100.0));
             result.nettopreis = result.preis - result.rabatt;
@@ -49,7 +48,7 @@ class ProduktDao {
 
         result.mehrwertsteueranteil = helper.round((result.nettopreis / 100) * result.mehrwertsteuer.steuerSatz);
         result.bruttopreis = helper.round(result.nettopreis + result.mehrwertsteueranteil);
-
+        */
         return result;
     }
 

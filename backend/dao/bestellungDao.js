@@ -1,6 +1,6 @@
 const helper = require('../helper.js');
 const BestellpositionDao = require('./bestellpositionDao.js');
-const PersonDao = require('./personDao.js');
+const AdresseDao = require('./adresseDao.js');
 const ZahlungsartDao = require('./zahlungsartDao.js');
 
 class BestellungDao {
@@ -15,7 +15,7 @@ class BestellungDao {
 
     loadById(id) {
         const bestellpositionDao = new BestellpositionDao(this._conn);
-        const personDao = new PersonDao(this._conn);
+        const adresseDao = new AdresseDao(this._conn);
         const zahlungsartDao = new ZahlungsartDao(this._conn);
 
         var sql = 'SELECT * FROM Bestellung WHERE id=?';
@@ -30,7 +30,7 @@ class BestellungDao {
         if (helper.isNull(result.bestellerId)) {
             result.besteller = null;
         } else {
-            result.besteller = personDao.loadById(result.bestellerId);
+            result.besteller = adresseDao.loadById(result.bestellerId);
         }
         delete result.bestellerId;
 
@@ -39,8 +39,7 @@ class BestellungDao {
 
         result.bestellpositionen = bestellpositionDao.loadByParent(result.id);
   
-        result.total = { 'rabatt': 0, 'netto': 0, 'brutto': 0, 'mehrwertsteuer': 0 };
-
+        /*
         for (var i = 0; i < result.bestellpositionen.length; i++) {
             result.total.rabatt += result.bestellpositionen[i].rabattsumme;
             result.total.netto += result.bestellpositionen[i].nettosumme;
@@ -48,19 +47,18 @@ class BestellungDao {
             result.total.mehrwertsteuer += result.bestellpositionen[i].mehrwertsteuersumme;
         }
 
-        result.total.rabatt = helper.round(result.total.rabatt);
         result.total.netto = helper.round(result.total.netto);
         result.total.brutto = helper.round(result.total.brutto);
         result.total.mehrwertsteuer = helper.round(result.total.mehrwertsteuer);
 
         result.mehrwertsteueranteile = this.getTaxParts(result.bestellpositionen);
-
+        */
         return result;
     }
 
     loadAll() {
         const bestellpositionDao = new BestellpositionDao(this._conn);
-        const personDao = new PersonDao(this._conn);
+        const adresseDao = new AdresseDao(this._conn);
         const zahlungsartDao = new ZahlungsartDao(this._conn);
 
         var sql = 'SELECT * FROM Bestellung';
@@ -71,35 +69,23 @@ class BestellungDao {
             return [];
 
         for (var i = 0; i < result.length; i++) {
-            result[i].bestellzeitpunkt = helper.formatToGermanDateTime(helper.parseSQLDateTimeString(result[i].bestellzeitpunkt));
+            result[i].datum = helper.formatToGermanDateTime(helper.parseSQLDateTimeString(result[i].datum));
 
-            if (helper.isNull(result[i].bestellerId)) {
+            if (helper.isNull(result[i].adresseId)) {
                 result[i].besteller = null;
             } else {
-                result[i].besteller = personDao.loadById(result[i].bestellerId);
+                result[i].besteller = adresseDao.loadById(result[i].adresseId);
             }
             delete result[i].bestellerId;
 
-            result[i].zahlungsart = zahlungsartDao.loadById(result[i].zahlungsartId);
-            delete result[i].zahlungsartid;
+            result[i].zahlungsart = zahlungsartDao.loadById(result[i].zahlungId);
+            delete result[i].zahlungId;
 
             result[i].bestellpositionen = bestellpositionDao.loadByParent(result[i].id);
 
-            result[i].total = { 'rabatt': 0, 'netto': 0, 'brutto': 0, 'mehrwertsteuer': 0 };
+            
 
-            for (var element of result[i].bestellpositionen) {
-                result[i].total.rabatt += element.rabattsumme;
-                result[i].total.netto += element.nettosumme;
-                result[i].total.brutto += element.bruttosumme;
-                result[i].total.mehrwertsteuer += element.mehrwertsteuersumme;
-            }
-
-            result[i].total.rabatt = helper.round(result[i].total.rabatt);
-            result[i].total.netto = helper.round(result[i].total.netto);
-            result[i].total.brutto = helper.round(result[i].total.brutto);
-            result[i].total.mehrwertsteuer = helper.round(result[i].total.mehrwertsteuer);
-
-            result[i].mehrwertsteueranteile = this.getTaxParts(result[i].bestellpositionen);
+            
         }
 
         return result;

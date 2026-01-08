@@ -98,10 +98,10 @@ class BestellpositionDao {
         return false;
     }
 
-    create(bestellungId = 1, produktId = 1, menge = 1) {
-        var sql = 'INSERT INTO Bestellposition (bestellungId,produktId,menge) VALUES (?,?,?)';
+    create(bestellungId = 1, produktId = 1, menge = 1, einzelpreis = 1) {
+        var sql = 'INSERT INTO Bestellposition (bestellungId,produktId,menge) VALUES (?,?,?,?)';
         var statement = this._conn.prepare(sql);
-        var params = [bestellungId, produktId, menge];
+        var params = [bestellungId, produktId, menge, einzelpreis];
         var result = statement.run(params);
 
         if (result.changes != 1) 
@@ -110,10 +110,10 @@ class BestellpositionDao {
         return this.loadById(result.lastInsertRowid);
     }
 
-    update(id, bestellungId = 1, produktId = 1, menge = 1) {
-        var sql = 'UPDATE Bestellposition SET bestellungId=?,produktId=?,menge=? WHERE id=?';
+    update(id, bestellungId = 1, produktId = 1, menge = 1, einzelpreis = 1) {
+        var sql = 'UPDATE Bestellposition SET bestellungId=?,produktId=?,menge=?, einzelpreis=? WHERE id=?';
         var statement = this._conn.prepare(sql);
-        var params = [bestellungId, produktId, menge, id];
+        var params = [bestellungId, produktId, menge,einzelpreis, id];
         var result = statement.run(params);
 
         if (result.changes != 1) 
