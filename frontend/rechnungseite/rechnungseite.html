@@ -30,49 +30,51 @@
       <h2>Lieferung</h2>
       <div class="flex">
         <label>
-          <input required="" class="input" placeholder="" type="text">
+          <input name="vorname" required="" class="input" placeholder="" type="text">
           <span>Vorname</span>
         </label>
         <label>
-          <input required="" class="input" placeholder="" type="text">
+          <input name="nachname" required="" class="input" placeholder="" type="text">
           <span>Nachname</span>
         </label>
       </div>
       <label>
-        <input required="" class="input" placeholder="" type="text">
+        <input name="adresse" required="" class="input" placeholder="" type="text">
         <span>Adresse</span>
       </label>
       <div class="flex">
         <label>
-          <input required="" class="input" placeholder="" type="text">
+          <input name="plz" required="" class="input" placeholder="" type="text">
           <span>Postleitzahl</span>
         </label>
         <label>
-          <input required="" class="input" placeholder="" type="text">
+          <input name="stadt" required="" class="input" placeholder="" type="text">
           <span>Stadt</span>
         </label>
       </div>
       
-      <select name="country" id="land">
-        <option value="initial">Land</option>
-        <option value="germany">Deutschland</option>
-        <option value="switzerland">Schweiz</option>
-        <option value="austria">Österreich</option>
+      <select name="land" id="land">
+        <option value="" disabled selected>Land wählen</option>
+        <option value="Deutschland">Deutschland</option>
+        <option value="Schweiz">Schweiz</option>
+        <option value="Österreich">Österreich</option>
       </select>
       
       <h2>Zahlung</h2>
       <label class="radio">
-        <input type="radio" name="zahlung" value="rechnung" checked>
+        <input type="radio" name="zahlung" value="1" checked>
         <span>Rechnung</span>
       </label>
       <label class="radio">
-        <input type="radio" name="zahlung" value="ueberweisung">
+        <input type="radio" name="zahlung" value="2">
         <span>Überweisung</span>
       </label>
       <label class="radio">
-        <input type="radio" name="zahlung" value="paypal">
+        <input type="radio" name="zahlung" value="3">
         <span>PayPal</span>
       </label>
+
+      <button type="submit" class="button">Jetzt Kaufen</button>
     </form>
 
     <div id="warenkorb">
@@ -97,11 +99,7 @@
         <span id="total">0,00 €</span>
         <span id="mwst">0,00 €</span>
       </div>
-    </div>
-      <a href="../bestellung/bestellung.html">
-        <button class="button">Jetzt Kaufen</button>
-      </a>
-    </div>
+    
   </main>
 
   <footer>

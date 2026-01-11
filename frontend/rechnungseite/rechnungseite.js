@@ -47,4 +47,61 @@ document.addEventListener("DOMContentLoaded", () =>{
     document.getElementById("total").textContent = total.toFixed(2) + " €";
     document.getElementById("mwst").textContent = mwst.toFixed(2) + " €";
   }
+
+  const cart2 = JSON.parse(localStorage.getItem("cart"));
+
+  const extraPrice = {
+    "keine" : 0,
+    "Schmetterlinge" : 2.5,
+    "Schoko-Stueckchen" : 1.5
+  };
+  const bestellpositionen = cart2.products.map(item => ({
+    produkt: {id: item.id},
+    menge: parseInt(item.piece, 10),
+    extra: item.extra,
+    extraPrice: extraPrice[item.extra] || 0
+  }));
+  const form = document.querySelector(".form");
+  form.addEventListener("submit", async function(event){
+    event.preventDefault();
+    const formData = new FormData(form);
+    const adress = {
+      vorname: formData.get("vorname"),
+      nachname: formData.get("nachname"),
+      adresse: formData.get("adresse"),
+      plz : formData.get("plz"),
+      stadt: formData.get("stadt"),
+      land : formData.get("land")
+    }
+    const zahlungId = formData.get("zahlung");
+
+    const bestellung = {
+      adresse: adress,
+      zahlungId: zahlungId,
+      positionen: bestellpositionen
+    };
+    console.log(bestellung);
+
+    try{
+      const response = await fetch('http://localhost:8000/api/adresse', {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(adress)
+      });
+      const result = await response.json();
+      if(response.ok){
+        console.log('Nachricht erfolgreich gesendet!');
+        this.reset();
+      }else{
+        console.error('Fehler beim Senden: ', result.nachricht);
+      }
+    } catch(error){
+      console.error('Netzwerkfehler: ', error);
+    }
+  });
+
+
+
 });

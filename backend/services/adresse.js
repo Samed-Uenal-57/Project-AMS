@@ -51,22 +51,19 @@ serviceRouter.post('/adresse', function(request, response) {
     console.log('Service Adresse: Client requested creation of new record');
 
     var errorMsgs=[];
-    if (helper.isUndefined(request.body.strasse)) 
+    if (helper.isUndefined(request.body.vorname)) 
         errorMsgs.push('strasse fehlt');
-    if (helper.isUndefined(request.body.hausnummer)) 
+    if (helper.isUndefined(request.body.nachname)) 
         errorMsgs.push('hausnummer fehlt');
-    if (helper.isUndefined(request.body.adresszusatz)) 
+    if (helper.isUndefined(request.body.adresse)) 
         request.body.adresszusatz = '';
     if (helper.isUndefined(request.body.plz)) 
         errorMsgs.push('plz fehlt');
-    if (helper.isUndefined(request.body.ort)) 
+    if (helper.isUndefined(request.body.stadt)) 
         errorMsgs.push('ort fehlt');
     if (helper.isUndefined(request.body.land)) {
         errorMsgs.push('land fehlt');
-    } else if (helper.isUndefined(request.body.land.id)) {
-        errorMsgs.push('land.id fehlt');
     }
-    
     if (errorMsgs.length > 0) {
         console.log('Service Adresse: Creation not possible, data missing');
         response.status(400).json({ 'fehler': true, 'nachricht': 'Funktion nicht möglich. Fehlende Daten: ' + helper.concatArray(errorMsgs) });
@@ -75,7 +72,7 @@ serviceRouter.post('/adresse', function(request, response) {
 
     const adresseDao = new AdresseDao(request.app.locals.dbConnection);
     try {
-        var obj = adresseDao.create(request.body.strasse, request.body.hausnummer, request.body.adresszusatz, request.body.plz, request.body.ort, request.body.land.id);
+        var obj = adresseDao.create(request.body.vorname, request.body.nachname, request.body.adresse, request.body.plz, request.body.stadt, request.body.land);
         console.log('Service Adresse: Record inserted');
         response.status(200).json(obj);
     } catch (ex) {
@@ -84,58 +81,5 @@ serviceRouter.post('/adresse', function(request, response) {
     }    
 });
 
-serviceRouter.put('/adresse', function(request, response) {
-    console.log('Service Adresse: Client requested update of existing record');
-
-    var errorMsgs=[];
-    if (helper.isUndefined(request.body.id)) 
-        errorMsgs.push('id fehl');
-    if (helper.isUndefined(request.body.strasse)) 
-        errorMsgs.push('strasse fehl');
-    if (helper.isUndefined(request.body.hausnummer)) 
-        errorMsgs.push('hausnummer fehl');
-    if (helper.isUndefined(request.body.adresszusatz)) 
-        request.body.adresszusatz = '';
-    if (helper.isUndefined(request.body.plz)) 
-        errorMsgs.push('plz fehl');
-    if (helper.isUndefined(request.body.ort)) 
-        errorMsgs.push('ort fehl');
-    if (helper.isUndefined(request.body.land)) {
-        errorMsgs.push('land fehl');
-    } else if (helper.isUndefined(request.body.land.id)) {
-        errorMsgs.push('land.id fehl');
-    }
-
-    if (errorMsgs.length > 0) {
-        console.log('Service Adresse: Update not possible, data missing');
-        response.status(400).json({ 'fehler': true, 'nachricht': 'Funktion nicht möglich. Fehlende Daten: ' + helper.concatArray(errorMsgs) });
-        return;
-    }
-
-    const adresseDao = new AdresseDao(request.app.locals.dbConnection);
-    try {
-        var obj = adresseDao.update(request.body.id, request.body.strasse, request.body.hausnummer, request.body.adresszusatz, request.body.plz, request.body.ort, request.body.land.id);
-        console.log('Service Adresse: Record updated, id=' + request.body.id);
-        response.status(200).json(obj);
-    } catch (ex) {
-        console.error('Service Adresse: Error updating record by id. Exception occured: ' + ex.message);
-        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
-    }    
-});
-
-serviceRouter.delete('/adresse/:id', function(request, response) {
-    console.log('Service Adresse: Client requested deletion of record, id=' + request.params.id);
-
-    const adresseDao = new AdresseDao(request.app.locals.dbConnection);
-    try {
-        var obj = adresseDao.loadById(request.params.id);
-        adresseDao.delete(request.params.id);
-        console.log('Service Adresse: Deletion of record successfull, id=' + request.params.id);
-        response.status(200).json({ 'gelöscht': true, 'eintrag': obj });
-    } catch (ex) {
-        console.error('Service Adresse: Error deleting record. Exception occured: ' + ex.message);
-        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
-    }
-});
 
 module.exports = serviceRouter;

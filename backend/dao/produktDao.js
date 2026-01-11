@@ -56,7 +56,7 @@ class ProduktDao {
         const produktkategorieDao = new ProduktkategorieDao(this._conn);
         const mehrwertsteuerDao = new MehrwertsteuerDao(this._conn);
         const produktbildDao = new ProduktbildDao(this._conn);
-        const downloadDao = new DownloadDao(this._conn);
+        
 
         var sql = 'SELECT * FROM Produkt';
         var statement = this._conn.prepare(sql);
@@ -72,13 +72,7 @@ class ProduktDao {
             result[i].mehrwertsteuer = mehrwertsteuerDao.loadById(result[i].mehrwertsteuerId);
             delete result[i].mehrwertsteuerid;
 
-            if (helper.isNull(result[i].datenblattId)) {
-                result[i].datenblatt = null;
-            } else {
-                result[i].datenblatt = downloadDao.loadById(result[i].datenblattId);
-            }
-            delete result[i].datenblattId;
-
+            
             result[i].bilder = produktbildDao.loadByParent(result[i].id);
 
             if (result[i].prozente > 0) {

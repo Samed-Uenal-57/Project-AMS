@@ -48,10 +48,10 @@ class AdresseDao {
         return false;
     }
 
-    create(vorname = '', name = '',strasse = '', plz = '', stadt = '', land = '') {
+    create(vorname = '', nachname = '',strasse = '', plz = '', stadt = '', land = '') {
         var sql = 'INSERT INTO Adresse (vorname,name,strasse,plz,stadt,land) VALUES (?,?,?,?,?,?)';
         var statement = this._conn.prepare(sql);
-        var params = [vorname, name, strasse, plz, stadt, land];
+        var params = [vorname, nachname, strasse, plz, stadt, land];
         var result = statement.run(params);
 
         if (result.changes != 1) 
