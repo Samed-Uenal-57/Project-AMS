@@ -1,3 +1,10 @@
+function formatPrice(value){
+    return value.toLocaleString("de-DE", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }) + " €";
+}
+
 document.addEventListener("DOMContentLoaded", () =>{
     
     const container = document.getElementById("whole-boxes");
@@ -34,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                     <div class="cake">
                         <div class="details">
                             <p>Name: ${p.bezeichnung}</p>
-                            <p>Einzelpreis: ${p.preis} €</p>
+                            <p>Einzelpreis: ${formatPrice(p.preis)}</p>
                             <label for="amount">Menge: </label>
                             <input type="number" class="amount" min="1" value="${product.piece}">
                             <button class="delete-btn"> Aus Warenkorb entfernen</button>
@@ -56,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                     const amount = Number(amountInput.value);
 
                     const finalPrice = (basePrice + extra) * amount;
-                    priceElement.textContent = finalPrice.toFixed(2) + " €";
+                    priceElement.textContent = formatPrice(finalPrice);
                     fullPrice();
                 }
                 amountInput.addEventListener("input", updatePrice);
@@ -92,9 +99,9 @@ document.addEventListener("DOMContentLoaded", () =>{
                 totalsum += value;
             }
         });
-        document.querySelector("#totalPrice").textContent = totalsum.toFixed(2) + " €";
+        document.querySelector("#totalPrice").textContent = formatPrice(totalsum);
         const mwst = totalsum * 0.19;
-        document.querySelector("#mwst").textContent = mwst.toFixed(2) + " €";
+        document.querySelector("#mwst").textContent = formatPrice(mwst);
     }
     fullPrice();
 });

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("date").textContent = bestellung.datum;
 
         document.getElementById("lieferadresse").innerHTML = `
-            ${bestellung.besteller.vorname} ${bestellung.besteller.nachname} <br>
+            ${bestellung.besteller.vorname} ${bestellung.besteller.name} <br>
             ${bestellung.besteller.strasse} <br>
             ${bestellung.besteller.plz} ${bestellung.besteller.stadt} <br>
             ${bestellung.besteller.land}    

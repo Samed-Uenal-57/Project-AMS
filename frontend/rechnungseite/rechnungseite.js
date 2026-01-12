@@ -1,3 +1,11 @@
+function formatPrice(value){
+    return value.toLocaleString("de-DE", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }) + " €";
+}
+
+
 document.addEventListener("DOMContentLoaded", () =>{
   const cart = JSON.parse(localStorage.getItem("cart"));
   if(!cart || !cart.products.length) return;
@@ -29,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         <img class="size" src=${bildPath} alt="Bild vom bestellten Kuchen">
         <div class="inner-element">
           <h4>${p.bezeichnung}</h4>
-          <p>${product.piece}x ${price.toFixed(2)} €</p>
+          <p>${product.piece} x ${formatPrice(price)}</p>
         </div>
       `;
       container.appendChild(div);
@@ -42,10 +50,10 @@ document.addEventListener("DOMContentLoaded", () =>{
     const total = subtotal + shipping;
     const mwst = total * 0.19;
 
-    document.getElementById("subtotal").textContent = subtotal.toFixed(2) + " €";
-    document.getElementById("shipping").textContent = shipping.toFixed(2) + " €";
-    document.getElementById("total").textContent = total.toFixed(2) + " €";
-    document.getElementById("mwst").textContent = mwst.toFixed(2) + " €";
+    document.getElementById("subtotal").textContent = formatPrice(subtotal);
+    document.getElementById("shipping").textContent = formatPrice(shipping);
+    document.getElementById("total").textContent = formatPrice(total);
+    document.getElementById("mwst").textContent = formatPrice(mwst);
   }
 
   
