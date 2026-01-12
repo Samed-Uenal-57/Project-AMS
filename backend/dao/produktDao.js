@@ -30,27 +30,21 @@ class ProduktDao {
         delete result.kategorieId;
         result.mehrwertsteuer = mehrwertsteuerDao.loadById(result.mehrwertsteuerId);
         delete result.mehrwertsteuerId;
-        if (helper.isNull(result.datenblattId)) {
-            result.datenblatt = null;
-        } else {
-            result.datenblatt = downloadDao.loadById(result.datenblattId);
-        }
         delete result.datenblattId;
         result.bilder = produktbildDao.loadByParent(result.id);
-        /*
-        if (result.prozente > 0) {
-            result.rabatt = helper.round(result.prozente * (result.preis / 100.0));
-            result.nettopreis = result.preis - result.rabatt;
-        } else {
-            result.rabatt = 0.0;
-            result.nettopreis = result.preis;
-        }
-
-        result.mehrwertsteueranteil = helper.round((result.nettopreis / 100) * result.mehrwertsteuer.steuerSatz);
-        result.bruttopreis = helper.round(result.nettopreis + result.mehrwertsteueranteil);
-        */
         return result;
     }
+    incrementViews(id){
+        var sql = 'UPDATE Produkt SET views = views + 1 WHERE id = ?';
+        var statement = this._conn.prepare(sql);
+        statement.run(id);
+        console.log("View incremented");
+    }
+    loadByIdAddView(id){
+        this.incrementViews(id);
+        return this.loadById(id);
+    }
+    
 
     loadAll() {
         const produktkategorieDao = new ProduktkategorieDao(this._conn);
@@ -90,7 +84,26 @@ class ProduktDao {
 
         return result;
     }
+    loadBestseller(limit = 4){
+        const produktkategorieDao = new ProduktkategorieDao(this._conn);
+        const mehrwertsteuerDao = new MehrwertsteuerDao(this._conn);
+        const produktbildDao = new ProduktbildDao(this._conn);
 
+        var sql = 'SELECT * FROM Produkt ORDER BY views DESC LIMIT ?';
+        var statement = this._conn.prepare(sql);
+        var result = statement.all(limit);
+        for (var i = 0; i < result.length; i++) {
+            result[i].kategorie = produktkategorieDao.loadById(result[i].kategorieId);
+            delete result[i].kategorieid;
+
+            result[i].mehrwertsteuer = mehrwertsteuerDao.loadById(result[i].mehrwertsteuerId);
+            delete result[i].mehrwertsteuerid;
+
+            
+            result[i].bilder = produktbildDao.loadByParent(result[i].id);
+        }
+        return result;
+    }
     exists(id) {
         var sql = 'SELECT COUNT(id) AS cnt FROM Produkt WHERE id=?';
         var statement = this._conn.prepare(sql);
@@ -164,6 +177,8 @@ class ProduktDao {
     toString() {
         console.log('ProduktDao [_conn=' + this._conn + ']');
     }
+    
+    
 }
 
 module.exports = ProduktDao;

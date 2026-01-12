@@ -2,22 +2,21 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     const container = document.getElementById("whole-boxes");
 
-    //console.log({container})
-
     const cart = JSON.parse(localStorage.getItem('cart'))
+    //Ist cart befüllt?
     if (!cart || !cart.products) return null
-
-    //console.log(cart.products)
 
     cart.products.forEach((product, index) => {
         //console.log({product})
         id = product.id
         let extra = 0;
-        
+        //Extras
         if(product.extra === "Schmetterlinge"){
             extra += 2.50;
-        }else{
+        }else if(product.extra === "Schocko-Stueckchen"){
             extra += 1.50;
+        } else{
+            extra = 0;
         }
     
         fetch(`http://localhost:8000/api/produkt/gib/${id}`)
@@ -48,9 +47,10 @@ document.addEventListener("DOMContentLoaded", () =>{
                     
                 `;
                 container.appendChild(div);
+                
                 const amountInput = div.querySelector(".amount");
                 const priceElement = div.querySelector(".sum");
-                
+                //Aktualisierung der Preise
                 function updatePrice(){
                     const basePrice = p.preis;
                     const amount = Number(amountInput.value);

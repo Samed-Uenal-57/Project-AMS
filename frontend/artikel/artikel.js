@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     const container = document.getElementById("product");
 
-    fetch(`http://localhost:8000/api/produkt/gib/${id}`)
+    fetch(`http://localhost:8000/api/produkt/anzeigen/${id}`)
         .then(res => res.json())
         .then(p => {
             const bildPath = 'http://localhost:8000/' + p.bilder[0].bildpfad;

@@ -60,6 +60,7 @@ img {
     margin-left: 50px;
     max-width: 35%;
     min-width: 100px;
+    margin-bottom: 50px;
 }
 
 #description {
@@ -73,11 +74,13 @@ img {
     
     align-items: center;
     flex-direction: column;
+    margin-bottom: 50px;
+    
 }
 
 .button{
     margin-top: 25px;
-    margin-left: 50px;
+    
     margin-bottom: 50px;
 }
 

@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () =>{
   const cart = JSON.parse(localStorage.getItem("cart"));
   if(!cart || !cart.products.length) return;
@@ -106,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () =>{
       return;
     }
     const bestellId = resultBestellung.id;
+    localStorage.removeItem("cart");
     window.location.href = `/bestellung/bestellung.html?bestellungId=${bestellId}`;
     
   });

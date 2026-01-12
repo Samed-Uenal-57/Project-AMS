@@ -7,7 +7,8 @@ console.log('- Service Produkt');
 
 serviceRouter.get('/produkt/gib/:id', function(request, response) {
     console.log('Service Produkt: Client requested one record, id=' + request.params.id);
-
+    const conn = request.app.locals.dbConnection;
+    
     const produktDao = new ProduktDao(request.app.locals.dbConnection);
     try {
         var obj = produktDao.loadById(request.params.id);
@@ -19,6 +20,28 @@ serviceRouter.get('/produkt/gib/:id', function(request, response) {
     }
 });
 
+serviceRouter.get('/produkt/anzeigen/:id', function(request, response){
+    const produktDao = new ProduktDao(request.app.locals.dbConnection);
+    try {
+        var obj = produktDao.loadByIdAddView(request.params.id);
+        console.log('Produkt loaded and added view');
+        response.status(200).json(obj);
+    }catch(ex){
+        response.status(400).json({fehler: true, nachricht: ex.message});
+    }
+});
+
+serviceRouter.get('/produkt/bestseller', function(request, response){
+    console.log('Service Produkt: Client requested bestseller products');
+    const produktDao = new ProduktDao(request.app.locals.dbConnection);
+    try{
+        var arr = produktDao.loadBestseller(4);
+        response.status(200).json(arr);
+    } catch(ex){
+        console.error('Error loading bestseller products: ', ex.message);
+        response.status(400).json({fehler: true, nachricht: ex.message});
+    }
+})
 serviceRouter.get('/produkt/alle', function(request, response) {
     console.log('Service Produkt: Client requested all records');
 
@@ -177,5 +200,6 @@ serviceRouter.delete('/produkt/:id', function(request, response) {
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
     }
 });
+
 
 module.exports = serviceRouter;

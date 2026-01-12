@@ -3,11 +3,11 @@ import {formatPrice} from "../pricechange.js";
 document.addEventListener("DOMContentLoaded", () =>{
     const container = document.getElementById("produkte-container");
     const container2 = document.getElementById("all");
-    fetch("http://localhost:8000/api/produkt/alle")
+    fetch("http://localhost:8000/api/produkt/bestseller")
     .then(res=> res.json())
     .then(produkte => {
-        const top = produkte.slice(0,4);
-        top.forEach(p=>{
+        
+        produkte.forEach(p=>{
             const div = document.createElement("div");
             const bildPfad = 'http://localhost:8000/' + p.bilder[0].bildpfad
                 
@@ -21,7 +21,14 @@ document.addEventListener("DOMContentLoaded", () =>{
             `;
             container.appendChild(div);
         });
-        const rest = produkte.slice(4);
+        
+
+    })
+    .catch(err => console.error("Fehler beim Laden: ", err));
+    fetch("http://localhost:8000/api/produkt/alle")
+    .then(res=>res.json())
+    .then(rest =>{
+        
         rest.forEach(p=>{
             const div2 = document.createElement("div");
             const bildPfad = 'http://localhost:8000/' + p.bilder[0].bildpfad
@@ -34,8 +41,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                 <p>${p.beschreibung}</p>
             `;
             container2.appendChild(div2);
-        })
-
+        });
     })
     .catch(err => console.error("Fehler beim Laden: ", err));
 });
