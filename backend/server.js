@@ -61,12 +61,6 @@ try {
     // binding endpoints
     const TOPLEVELPATH = '/api';
     console.log('Binding enpoints, top level Path at ' + TOPLEVELPATH);
-    
-    
-
-    
-
-   
 
     var serviceRouter = require('./services/produktkategorie.js');
     app.use(TOPLEVELPATH, serviceRouter);
@@ -88,29 +82,12 @@ try {
 
     serviceRouter = require('./services/produkt.js');
     app.use(TOPLEVELPATH, serviceRouter);
-    /*
-    serviceRouter = require('./services/land.js');
-    app.use(TOPLEVELPATH, serviceRouter);
     
-    
-    serviceRouter = require('./services/benutzerrolle.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-    serviceRouter = require('./services/benutzer.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-    serviceRouter = require('./services/person.js');
-    app.use(TOPLEVELPATH, serviceRouter);
-    */
     serviceRouter = require('./services/bewertung.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
-    
-
     serviceRouter = require('./services/kontaktformular.js');
     app.use(TOPLEVELPATH, serviceRouter);
-    
-    
-
-
     
     // send default error message if no matching endpoint found
     app.use(function (request, response) {
