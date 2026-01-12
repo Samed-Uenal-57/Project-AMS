@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="bestellung.css">
   <link rel="stylesheet" type="text/css" href="../general.css">
-  <script src="bestellung.js" defer></script>
+  <script src="bestaetigung.js" defer></script>
   <title>Rechnungseite</title>
 </head>
 
@@ -31,36 +31,33 @@
         
         <div id="confirmation"></div>
         <div>
-            <p>Bestellnummer: <strong> 1</strong> <br>
+            <p>Bestellnummer: <strong id="order-id"> </strong> <br>
             <p>Voraussichtliche Lieferzeit: <strong>2-3 Tage</strong></p>
+            <p>Kaufdatum: <strong id="date">"date"</strong></p>
         </div>
       </div>
       <h3>Lieferadresse:</h3>
       <div class="order-box">
-          
-          <p>
-              Max Mustermann <br>
-              Musterstraße 4 <br>
-              12345 Musterstadt
-          </p>
+        <p id="lieferadresse"></p>
+        
       </div>
       <h3>Zahlungsart</h3>
       <div class="order-box">
-        <p>Paypal</p>
+        <p id="zahlungsart"></p>
       </div>
       <h3>Bestellübersicht: </h3>
       <div class="order-box" id="last-box">
           <div class="line">
             <span>Zwischensumme:</span>
-            <span>71,50 €</span>
+            <span id="subtotal"></span>
           </div>
           <div class="line">  
             <span>Versand:</span>
-            <span>4,50 €</span>
+            <span id="shipping"></span>
           </div>
           <div class="line">
             <span><strong>Gesamtsumme:</span>
-            <span>75,00 €</span></strong>
+            <span id="total"></span></strong>
           </div>
       </div>
   

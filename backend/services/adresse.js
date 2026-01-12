@@ -52,15 +52,15 @@ serviceRouter.post('/adresse', function(request, response) {
 
     var errorMsgs=[];
     if (helper.isUndefined(request.body.vorname)) 
-        errorMsgs.push('strasse fehlt');
+        errorMsgs.push('Vorname fehlt');
     if (helper.isUndefined(request.body.nachname)) 
-        errorMsgs.push('hausnummer fehlt');
+        errorMsgs.push('Nachname fehlt');
     if (helper.isUndefined(request.body.strasse)) 
-        
+        errorMsgs.push('Strasse fehlt')
     if (helper.isUndefined(request.body.plz)) 
         errorMsgs.push('plz fehlt');
     if (helper.isUndefined(request.body.stadt)) 
-        errorMsgs.push('ort fehlt');
+        errorMsgs.push('stadt fehlt');
     if (helper.isUndefined(request.body.land)) {
         errorMsgs.push('land fehlt');
     }
@@ -72,7 +72,7 @@ serviceRouter.post('/adresse', function(request, response) {
 
     const adresseDao = new AdresseDao(request.app.locals.dbConnection);
     try {
-        var obj = adresseDao.create(request.body.vorname, request.body.nachname, request.body.adresse, request.body.plz, request.body.stadt, request.body.land);
+        var obj = adresseDao.create(request.body.vorname, request.body.nachname, request.body.strasse, request.body.plz, request.body.stadt, request.body.land);
         console.log('Service Adresse: Record inserted');
         response.status(200).json(obj);
     } catch (ex) {

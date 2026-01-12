@@ -50,19 +50,8 @@ document.addEventListener("DOMContentLoaded", () =>{
     document.getElementById("mwst").textContent = mwst.toFixed(2) + " €";
   }
 
-  const cart2 = JSON.parse(localStorage.getItem("cart"));
+  
 
-  const extraPrice = {
-    "keine" : 0,
-    "Schmetterlinge" : 2.5,
-    "Schoko-Stueckchen" : 1.5
-  };
-  const bestellpositionen = cart2.products.map(item => ({
-    produkt: {id: item.id},
-    menge: parseInt(item.piece, 10),
-    extra: item.extra,
-    extraPrice: extraPrice[item.extra] || 0
-  }));
   const form = document.querySelector(".form");
   form.addEventListener("submit", async function(event){
     
@@ -90,25 +79,22 @@ document.addEventListener("DOMContentLoaded", () =>{
     });
     const result = await response.json();
     const AdresseId = parseInt(result.id,10);
-
+    console.log('Adresse wurde gespeichert');
     //POST-BESTELLUNG
 
-    const Bestellpositionen = cart.products.map(item => ({
-      produkt: {id: parseInt(item.id, 10)},
-      menge: parseInt(item.piece, 10),
-      einzelpreis: Number(item.preis) + (extraPrice[item.extra] || 0)
-    }));
+   
     const ZahlungId = parseInt(formData.get("zahlung"), 10);
     console.log(ZahlungId);
-    const Datum = new Date().toISOString();
+    const Datum = new Date().toLocaleDateString("DE-de");
+    console.log(Datum);
     const bestellung = {
       adresseId: AdresseId,
-      zahlungsart: {id : ZahlungId},
+      zahlungId: ZahlungId,
       datum: Datum,
-      bestellpositionen : Bestellpositionen 
+      gesamtpreis: subtotal
     };
     const responseBestellung = await fetch('http://localhost:8000/api/bestellung', {
-      method: "POST",
+      method: 'POST',
       headers:{
         'Content-Type': 'application/json'
       },
@@ -119,7 +105,8 @@ document.addEventListener("DOMContentLoaded", () =>{
       console.error('Fehler bei Bestellung: ', resultBestellung.nachricht);
       return;
     }
-    
+    const bestellId = resultBestellung.id;
+    window.location.href = `/bestellung/bestellung.html?bestellungId=${bestellId}`;
     
   });
 });

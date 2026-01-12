@@ -26,14 +26,7 @@ class AdresseDao {
         var statement = this._conn.prepare(sql);
         var result = statement.all();
 
-        /*if (helper.isArrayEmpty(result)) 
-            return [];
-
-        for (var i = 0; i < result.length; i++) {
-            result[i].land = landDao.loadById(result[i].landId);
-            delete result[i].landId;            
-        }
-        */
+    
         return result;
     }
 
