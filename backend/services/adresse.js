@@ -55,8 +55,8 @@ serviceRouter.post('/adresse', function(request, response) {
         errorMsgs.push('strasse fehlt');
     if (helper.isUndefined(request.body.nachname)) 
         errorMsgs.push('hausnummer fehlt');
-    if (helper.isUndefined(request.body.adresse)) 
-        request.body.adresszusatz = '';
+    if (helper.isUndefined(request.body.strasse)) 
+        
     if (helper.isUndefined(request.body.plz)) 
         errorMsgs.push('plz fehlt');
     if (helper.isUndefined(request.body.stadt)) 
