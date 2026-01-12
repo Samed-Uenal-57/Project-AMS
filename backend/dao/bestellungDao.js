@@ -27,17 +27,17 @@ class BestellungDao {
 
         result.bestellzeitpunkt = helper.formatToGermanDateTime(helper.parseSQLDateTimeString(result.bestellzeitpunkt));
 
-        if (helper.isNull(result.bestellerId)) {
+        if (helper.isNull(result.adresseId)) {
             result.besteller = null;
         } else {
-            result.besteller = adresseDao.loadById(result.bestellerId);
+            result.besteller = adresseDao.loadById(result.adresseId);
         }
-        delete result.bestellerId;
+        delete result.adresseId;
 
-        result.zahlungsart = zahlungsartDao.loadById(result.zahlungsartId);
-        delete result.zahlungsartId;
+        result.zahlungsart = zahlungsDao.loadById(result.zahlungsId);
+        delete result.zahlungId;
 
-        result.bestellpositionen = bestellpositionDao.loadByParent(result.id);
+        //result.bestellpositionen = bestellpositionDao.loadByParent(result.id);
   
         /*
         for (var i = 0; i < result.bestellpositionen.length; i++) {
@@ -76,12 +76,12 @@ class BestellungDao {
             } else {
                 result[i].besteller = adresseDao.loadById(result[i].adresseId);
             }
-            delete result[i].bestellerId;
+            delete result[i].adresseId;
 
             result[i].zahlungsart = zahlungsartDao.loadById(result[i].zahlungId);
             delete result[i].zahlungId;
 
-            result[i].bestellpositionen = bestellpositionDao.loadByParent(result[i].id);
+            //result[i].bestellpositionen = bestellpositionDao.loadByParent(result[i].id);
 
             
 
@@ -102,15 +102,14 @@ class BestellungDao {
         return false;
     }
 
-    create(bestellzeitpunkt = null, bestellerId = null, zahlungsartId = null, bestellpositionen = []) {
+    create(adresseId='', zahlungId='', datum='') {
         const bestellpositionDao = new BestellpositionDao(this._conn);
 
-        if (helper.isNull(bestellzeitpunkt)) 
-            bestellzeitpunkt = helper.getNow();
+        
 
-        var sql = 'INSERT INTO Bestellung (bestellzeitpunkt,bestellerId,zahlungsartId) VALUES (?,?,?)';
+        var sql = 'INSERT INTO Bestellung (adresseId, zahlungId, datum) VALUES (?,?,?)';
         var statement = this._conn.prepare(sql);
-        var params = [helper.formatToSQLDateTime(bestellzeitpunkt), bestellerId, zahlungsartId];
+        var params = [adresseId, zahlungId, datum];
         var result = statement.run(params);
 
         if (result.changes != 1) 
@@ -125,29 +124,7 @@ class BestellungDao {
         return this.loadById(result.lastInsertRowid);
     }
 
-    update(id, bestellzeitpunkt = null, bestellerId = null, zahlungsartId = null, bestellpositionen = []) {
-        const bestellpositionDao = new BestellpositionDao(this._conn);
-        bestellpositionDao.deleteByParent(id);
-
-        if (helper.isNull(bestellzeitpunkt)) 
-            bestellzeitpunkt = helper.getNow();
-
-        var sql = 'UPDATE Bestellung SET bestellzeitpunkt=?,bestellerId=?,zahlungsartId=? WHERE id=?';
-        var statement = this._conn.prepare(sql);
-        var params = [helper.formatToSQLDateTime(bestellzeitpunkt), bestellerId, zahlungsartId, id];
-        var result = statement.run(params);
-
-        if (result.changes != 1) 
-            throw new Error('Could not update existing Record. Data: ' + params);
-        
-        if (bestellpositionen.length > 0) {
-            for (var element of bestellpositionen) {
-                bestellpositionDao.create(id, element.produkt.id, element.menge);
-            }
-        }
-
-        return this.loadById(id);
-    }
+    
 
     delete(id) {
         try {
